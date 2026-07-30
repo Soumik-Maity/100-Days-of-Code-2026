@@ -1,0 +1,149 @@
+/* ==========================================
+   Revision View
+========================================== */
+
+#revision-view {
+  padding: 24px;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+     Header
+  ========================================== */
+
+.revision-header {
+  margin-bottom: 24px;
+}
+
+.revision-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ==========================================
+     Table
+  ========================================== */
+
+#revision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ==========================================
+     Rows
+  ========================================== */
+
+.revision-row {
+  display: grid;
+  grid-template-columns:
+    90px
+    260px
+    1fr
+    140px
+    120px;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 14px 18px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  background: var(--surface-color);
+}
+
+.revision-header.revision-row {
+  font-weight: 700;
+
+  background: var(--surface-secondary);
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* ==========================================
+     Question
+  ========================================== */
+
+.revision-question {
+  line-height: 1.5;
+}
+
+.revision-question strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ==========================================
+     Status
+  ========================================== */
+
+.revision-status {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.revision-status.solved {
+  background: #dff6e5;
+  color: #1f7a3d;
+}
+
+.revision-status.pending {
+  background: #f2f2f2;
+  color: #666;
+}
+
+/* ==========================================
+     Button
+  ========================================== */
+
+.revision-open-button {
+  width: 100%;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.revision-open-button:hover {
+  transform: translateY(-1px);
+}
+
+.revision-open-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+     Empty State
+  ========================================== */
+
+.revision-empty {
+  padding: 40px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+}

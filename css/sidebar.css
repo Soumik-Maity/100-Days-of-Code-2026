@@ -1,0 +1,163 @@
+/* ==========================================
+   Sidebar
+========================================== */
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-surface);
+
+  overflow: hidden;
+}
+
+/* ==========================================
+   Navigation
+========================================== */
+
+#sidebar nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  padding: 18px 14px;
+}
+
+/* ==========================================
+   Navigation Item
+========================================== */
+
+.nav-item {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================
+   Hover
+========================================== */
+
+.nav-item:hover {
+  background: rgba(100, 149, 237, 0.1);
+
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   Active
+========================================== */
+
+.nav-item.active {
+  background: var(--color-primary);
+  color: white;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   Icon
+========================================== */
+
+.nav-item .icon {
+  width: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   Label
+========================================== */
+
+.nav-item .label {
+  white-space: nowrap;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+/* ==========================================
+   Collapsed Sidebar
+========================================== */
+
+#layout.sidebar-collapsed .nav-item {
+  justify-content: center;
+
+  padding: 14px 0;
+}
+
+#layout.sidebar-collapsed .nav-item .label {
+  opacity: 0;
+
+  width: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+#layout.sidebar-collapsed #sidebar nav {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ==========================================
+   Active Item (Collapsed)
+========================================== */
+
+#layout.sidebar-collapsed .nav-item.active {
+  border-radius: 14px;
+}
+
+/* ==========================================
+   Navigation Animation
+========================================== */
+
+.nav-item {
+  animation: fadeSlideIn 0.35s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================
+   Accessibility
+========================================== */
+
+.nav-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

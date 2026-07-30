@@ -1,0 +1,2656 @@
+{
+  "questionBank": [
+    {
+      "id": 1,
+      "name": "User Inputs, Operations & Output",
+      "icon": "🖥️",
+      "color": "#e8f0ff",
+      "days": [
+        {
+          "day": 1,
+          "questions": [
+            {
+              "id": 1,
+              "text": "Write a program to input two numbers and display their sum.",
+              "testCases": [
+                {
+                  "input": "3 4",
+                  "output": "Sum = 7"
+                },
+                {
+                  "input": "-1 20",
+                  "output": "Sum = 19"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "text": "Write a program to input two numbers and display their sum, difference, product, and quotient.",
+              "testCases": [
+                {
+                  "input": "10 2",
+                  "output": "Sum=12, Diff=8, Product=20, Quotient=5"
+                },
+                {
+                  "input": "7 3",
+                  "output": "Sum=10, Diff=4, Product=21, Quotient=2"
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Division by zero should be handled carefully."
+              }
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "questions": [
+            {
+              "id": 3,
+              "text": "Write a program to calculate the area and perimeter of a rectangle given its length and breadth.",
+              "testCases": [
+                {
+                  "input": "5 10",
+                  "output": "Area=50, Perimeter=30"
+                },
+                {
+                  "input": "3 7",
+                  "output": "Area=21, Perimeter=20"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "text": "Write a program to calculate the area and circumference of a circle given its radius.",
+              "testCases": [
+                {
+                  "input": "7",
+                  "output": "Area=153.94, Circumference=43.96"
+                },
+                {
+                  "input": "3",
+                  "output": "Area=28.27, Circumference=18.85"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "questions": [
+            {
+              "id": 5,
+              "text": "Write a program to convert temperature from Celsius to Fahrenheit.",
+              "testCases": [
+                {
+                  "input": "0",
+                  "output": "Fahrenheit=32"
+                },
+                {
+                  "input": "100",
+                  "output": "Fahrenheit=212"
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "text": "Write a program to swap two numbers using a third variable.",
+              "testCases": [
+                {
+                  "input": "3 5",
+                  "output": "After swap: 5 3"
+                },
+                {
+                  "input": "-1 1",
+                  "output": "After swap: 1 -1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "questions": [
+            {
+              "id": 7,
+              "text": "Write a program to swap two numbers without using a third variable.",
+              "testCases": [
+                {
+                  "input": "10 20",
+                  "output": "After swap: 20 10"
+                },
+                {
+                  "input": "7 14",
+                  "output": "After swap: 14 7"
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "text": "Write a program to find and display the sum of the first n natural numbers.",
+              "testCases": [
+                {
+                  "input": "5",
+                  "output": "Sum=15"
+                },
+                {
+                  "input": "10",
+                  "output": "Sum=55"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "questions": [
+            {
+              "id": 9,
+              "text": "Write a program to calculate simple and compound interest for given principal, rate, and time.",
+              "testCases": [
+                {
+                  "input": "1000 5 2",
+                  "output": "Simple Interest=100, Compound Interest=102.5"
+                },
+                {
+                  "input": "5000 7 3",
+                  "output": "Simple Interest=1050, Compound Interest=1125.76"
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "text": "Write a program to input time in seconds and convert it to hours:minutes:seconds format.",
+              "testCases": [
+                {
+                  "input": "3661",
+                  "output": "1:1:1"
+                },
+                {
+                  "input": "7322",
+                  "output": "2:2:2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Conditional Statements",
+      "icon": "🔀",
+      "color": "#ffe4e1",
+      "days": [
+        {
+          "day": 6,
+          "questions": [
+            {
+              "id": 11,
+              "text": "Write a program to input an integer and check whether it is even or odd using if–else.",
+              "testCases": [
+                {
+                  "input": "7",
+                  "output": "7 is odd"
+                },
+                {
+                  "input": "12",
+                  "output": "12 is even"
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "text": "Write a program to input an integer and check whether it is positive, negative or zero using nested if–else.",
+              "testCases": [
+                {
+                  "input": "-5",
+                  "output": "Negative"
+                },
+                {
+                  "input": "0",
+                  "output": "Zero"
+                },
+                {
+                  "input": "10",
+                  "output": "Positive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "questions": [
+            {
+              "id": 13,
+              "text": "Write a program to input a year and check whether it is a leap year or not using conditional statements.",
+              "testCases": [
+                {
+                  "input": "2020",
+                  "output": "Leap year"
+                },
+                {
+                  "input": "1900",
+                  "output": "Not a leap year"
+                },
+                {
+                  "input": "2000",
+                  "output": "Leap year"
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Year is a leap year if divisible by 4 but not 100, except if divisible by 400."
+              }
+            },
+            {
+              "id": 14,
+              "text": "Write a program to input a character and check whether it is a vowel or consonant using if–else.",
+              "testCases": [
+                {
+                  "input": "a",
+                  "output": "Vowel"
+                },
+                {
+                  "input": "b",
+                  "output": "Consonant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "questions": [
+            {
+              "id": 15,
+              "text": "Write a program to input a character and check whether it is an uppercase alphabet, lowercase alphabet, digit, or special character.",
+              "testCases": [
+                {
+                  "input": "A",
+                  "output": "Uppercase alphabet"
+                },
+                {
+                  "input": "a",
+                  "output": "Lowercase alphabet"
+                },
+                {
+                  "input": "3",
+                  "output": "Digit"
+                },
+                {
+                  "input": "#",
+                  "output": "Special character"
+                }
+              ]
+            },
+            {
+              "id": 16,
+              "text": "Write a program to input three numbers and find the largest among them using if–else.",
+              "testCases": [
+                {
+                  "input": "3 7 5",
+                  "output": "Largest is 7"
+                },
+                {
+                  "input": "-1 -5 0",
+                  "output": "Largest is 0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "questions": [
+            {
+              "id": 17,
+              "text": "Write a program to find the roots of a quadratic equation and categorize them.",
+              "testCases": [
+                {
+                  "input": "1 -3 2",
+                  "output": "Roots are real and different: 2, 1"
+                },
+                {
+                  "input": "1 -2 1",
+                  "output": "Roots are real and same: 1"
+                },
+                {
+                  "input": "1 2 5",
+                  "output": "Roots are complex"
+                }
+              ]
+            },
+            {
+              "id": 18,
+              "text": "Write a program that accepts a percentage (0-100) and assigns a grade based on the following criteria: \n90-100: Grade A \n80-89: Grade B \n70-79: Grade C \n60-69: Grade D \nbelow 60: Grade F.",
+              "testCases": [
+                {
+                  "input": "95",
+                  "output": "Grade A"
+                },
+                {
+                  "input": "82",
+                  "output": "Grade B"
+                },
+                {
+                  "input": "68",
+                  "output": "Grade D"
+                },
+                {
+                  "input": "50",
+                  "output": "Grade F"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 10,
+          "questions": [
+            {
+              "id": 19,
+              "text": "Write a program to classify a triangle as Equilateral, Isosceles, or Scalene based on its side lengths.",
+              "testCases": [
+                {
+                  "input": "3 3 3",
+                  "output": "Equilateral"
+                },
+                {
+                  "input": "3 3 4",
+                  "output": "Isosceles"
+                },
+                {
+                  "input": "2 3 4",
+                  "output": "Scalene"
+                }
+              ]
+            },
+            {
+              "id": 20,
+              "text": "Write a program to display the day of the week based on a number (1–7) using switch-case.",
+              "testCases": [
+                {
+                  "input": "1",
+                  "output": "Monday"
+                },
+                {
+                  "input": "5",
+                  "output": "Friday"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 11,
+          "questions": [
+            {
+              "id": 21,
+              "text": "Write a program to display the month name and number of days using switch-case for a given month number.",
+              "testCases": [
+                {
+                  "input": "2",
+                  "output": "February, 28 days"
+                },
+                {
+                  "input": "12",
+                  "output": "December, 31 days"
+                }
+              ]
+            },
+            {
+              "id": 22,
+              "text": "Write a program to find profit or loss percentage given cost price and selling price.",
+              "testCases": [
+                {
+                  "input": "1000 1200",
+                  "output": "Profit 20%"
+                },
+                {
+                  "input": "1000 800",
+                  "output": "Loss 20%"
+                },
+                {
+                  "input": "1000 1000",
+                  "output": "No Profit No Loss"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 12,
+          "questions": [
+            {
+              "id": 23,
+              "text": "Write a program to calculate library fine based on late days as follows: \nFirst 5 days late: ₹2/day \nNext 5 days late: ₹4/day \nNext 20 days days late: ₹6/day \nMore than 30 days: Membership Cancelled.",
+              "testCases": [
+                {
+                  "input": "4",
+                  "output": "Fine ₹8"
+                },
+                {
+                  "input": "8",
+                  "output": "Fine ₹22"
+                },
+                {
+                  "input": "15",
+                  "output": "Fine ₹60"
+                },
+                {
+                  "input": "31",
+                  "output": "Membership Cancelled"
+                }
+              ]
+            },
+            {
+              "id": 24,
+              "text": "Write a program to calculate electricity bill based on units consumed with these rates: \nFirst 100 units at ₹5/unit \nNext 100 units at ₹7/unit \nNext 100 units at ₹10/unit \nAbove at ₹12/unit",
+              "testCases": [
+                {
+                  "input": "50",
+                  "output": "Bill: ₹250"
+                },
+                {
+                  "input": "150",
+                  "output": "Bill: ₹850"
+                },
+                {
+                  "input": "250",
+                  "output": "Bill: ₹1700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 13,
+          "questions": [
+            {
+              "id": 25,
+              "text": "Write a program to implement a basic calculator using switch-case for +, -, *, /, %.",
+              "testCases": [
+                {
+                  "input": "4 2 +",
+                  "output": "6"
+                },
+                {
+                  "input": "10 3 %",
+                  "output": "1"
+                },
+                {
+                  "input": "15 5 /",
+                  "output": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Loops without Arrays/Strings",
+      "icon": "🔁",
+      "color": "#f0fff0",
+      "days": [
+        {
+          "day": 14,
+          "questions": [
+            {
+              "id": 26,
+              "text": "Write a program to print numbers from 1 to n.",
+              "testCases": [
+                {
+                  "input": "5",
+                  "output": "1 2 3 4 5"
+                },
+                {
+                  "input": "3",
+                  "output": "1 2 3"
+                }
+              ]
+            },
+            {
+              "id": 27,
+              "text": "Write a program to print the sum of the first n odd numbers.",
+              "testCases": [
+                {
+                  "input": "3",
+                  "output": "9"
+                },
+                {
+                  "input": "5",
+                  "output": "25"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 15,
+          "questions": [
+            {
+              "id": 28,
+              "text": "Write a program to print the product of even numbers from 1 to n.",
+              "testCases": [
+                {
+                  "input": "4",
+                  "output": "8 (2 * 4)"
+                },
+                {
+                  "input": "6",
+                  "output": "48 (2 * 4 * 6)"
+                }
+              ]
+            },
+            {
+              "id": 29,
+              "text": "Write a program to calculate the factorial of a number.",
+              "testCases": [
+                {
+                  "input": "5",
+                  "output": "120"
+                },
+                {
+                  "input": "3",
+                  "output": "6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 16,
+          "questions": [
+            {
+              "id": 30,
+              "text": "Write a program to reverse a given number.",
+              "testCases": [
+                {
+                  "input": "1234",
+                  "output": "4321"
+                },
+                {
+                  "input": "100",
+                  "output": "1"
+                }
+              ]
+            },
+            {
+              "id": 31,
+              "text": "Write a program to take a number as input and print its equivalent binary representation.",
+              "testCases": [
+                {
+                  "input": "10",
+                  "output": "1010"
+                },
+                {
+                  "input": "7",
+                  "output": "111"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 17,
+          "questions": [
+            {
+              "id": 32,
+              "text": "Write a program to check if a number is a palindrome.",
+              "testCases": [
+                {
+                  "input": "121",
+                  "output": "Palindrome"
+                },
+                {
+                  "input": "123",
+                  "output": "Not palindrome"
+                }
+              ]
+            },
+            {
+              "id": 33,
+              "text": "Write a program to check if a number is an Armstrong number.",
+              "testCases": [
+                {
+                  "input": "153",
+                  "output": "Armstrong"
+                },
+                {
+                  "input": "123",
+                  "output": "Not Armstrong"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 18,
+          "questions": [
+            {
+              "id": 34,
+              "text": "Write a program to check if a number is prime.",
+              "testCases": [
+                {
+                  "input": "7",
+                  "output": "Prime"
+                },
+                {
+                  "input": "10",
+                  "output": "Not prime"
+                }
+              ]
+            },
+            {
+              "id": 35,
+              "text": "Write a program to print all factors of a given number.",
+              "testCases": [
+                {
+                  "input": "6",
+                  "output": "1 2 3 6"
+                },
+                {
+                  "input": "10",
+                  "output": "1 2 5 10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 19,
+          "questions": [
+            {
+              "id": 36,
+              "text": "Write a program to find the HCF (GCD) of two numbers.",
+              "testCases": [
+                {
+                  "input": "12 18",
+                  "output": "6"
+                },
+                {
+                  "input": "7 9",
+                  "output": "1"
+                }
+              ]
+            },
+            {
+              "id": 37,
+              "text": "Write a program to find the LCM of two numbers.",
+              "testCases": [
+                {
+                  "input": "4 5",
+                  "output": "20"
+                },
+                {
+                  "input": "7 3",
+                  "output": "21"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 20,
+          "questions": [
+            {
+              "id": 38,
+              "text": "Write a program to find the sum of digits of a number.",
+              "testCases": [
+                {
+                  "input": "123",
+                  "output": "6"
+                },
+                {
+                  "input": "999",
+                  "output": "27"
+                }
+              ]
+            },
+            {
+              "id": 39,
+              "text": "Write a program to find the product of odd digits of a number.",
+              "testCases": [
+                {
+                  "input": "12345",
+                  "output": "15 (1*3*5)"
+                },
+                {
+                  "input": "2468",
+                  "output": "1 (no odd digits, assume 1)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "questions": [
+            {
+              "id": 40,
+              "text": "Write a program to find the 1’s complement of a binary number and print it.",
+              "testCases": [
+                {
+                  "input": "1010",
+                  "output": "0101"
+                },
+                {
+                  "input": "1111",
+                  "output": "0000"
+                }
+              ]
+            },
+            {
+              "id": 41,
+              "text": "Write a program to swap the first and last digit of a number.",
+              "testCases": [
+                {
+                  "input": "1234",
+                  "output": "4231"
+                },
+                {
+                  "input": "1001",
+                  "output": "1001"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 22,
+          "questions": [
+            {
+              "id": 42,
+              "text": "Write a program to check if a number is a perfect number.",
+              "testCases": [
+                {
+                  "input": "6",
+                  "output": "Perfect number"
+                },
+                {
+                  "input": "10",
+                  "output": "Not perfect number"
+                }
+              ]
+            },
+            {
+              "id": 43,
+              "text": "Write a program to check if a number is a strong number.",
+              "testCases": [
+                {
+                  "input": "145",
+                  "output": "Strong number"
+                },
+                {
+                  "input": "123",
+                  "output": "Not strong number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 23,
+          "questions": [
+            {
+              "id": 44,
+              "text": "Write a program to find the sum of the series: 1 + 3/4 + 5/6 + 7/8 + … up to n terms.",
+              "testCases": [
+                {
+                  "input": "3",
+                  "output": "Approximate sum: 3.3"
+                },
+                {
+                  "input": "5",
+                  "output": "Approximate sum: 4.4"
+                }
+              ]
+            },
+            {
+              "id": 45,
+              "text": "Write a program to find the sum of the series: 2/3 + 4/7 + 6/11 + 8/15 + ... up to n terms.",
+              "testCases": [
+                {
+                  "input": "3",
+                  "output": "Approximate sum: 1.56"
+                },
+                {
+                  "input": "5",
+                  "output": "Approximate sum: 2.22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Nested Loops without Arrays/Strings",
+      "icon": "🔄",
+      "color": "#fff0f5",
+      "days": [
+        {
+          "day": 24,
+          "questions": [
+            {
+              "id": 46,
+              "text": "Write a program to print the following pattern:\n*****\n*****\n*****\n*****\n*****",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "*****\n*****\n*****\n*****\n*****"
+                }
+              ]
+            },
+            {
+              "id": 47,
+              "text": "Write a program to print the following pattern:\n*\n**\n***\n****\n*****",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "*\n**\n***\n****\n*****"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 25,
+          "questions": [
+            {
+              "id": 48,
+              "text": "Write a program to print the following pattern:\n1\n12\n123\n1234\n12345",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "1\n12\n123\n1234\n12345"
+                }
+              ]
+            },
+            {
+              "id": 49,
+              "text": "Write a program to print the following pattern:\n5\n45\n345\n2345\n12345",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "5\n45\n345\n2345\n12345"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 26,
+          "questions": [
+            {
+              "id": 50,
+              "text": "Write a program to print the following pattern:\n*****\n ****\n  ***\n   **\n    *",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "*****\n ****\n  ***\n   **\n    *"
+                },
+                {
+                  "input": "",
+                  "output": "Note: Spaces indicate indentation."
+                }
+              ]
+            },
+            {
+              "id": 51,
+              "text": "Write a program to print the following pattern:\n    5\n   45\n  345\n 2345\n12345",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "    5\n   45\n  345\n 2345\n12345"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 27,
+          "questions": [
+            {
+              "id": 52,
+              "text": "Write a program to print the following pattern:\n\n*\n\n*\n*\n*\n\n*\n*\n*\n*\n*\n\n*\n*\n*\n\n*\n\n",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "Pattern with stars spaced irregularly as shown."
+                }
+              ]
+            },
+            {
+              "id": 53,
+              "text": "Write a program to print the following pattern:\n*\n***\n*****\n*******\n*********\n*******\n*****\n***\n*",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "*\n***\n*****\n*******\n*********\n*******\n*****\n***\n*"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "questions": [
+            {
+              "id": 54,
+              "text": "Write a program to print the following pattern:\n\n   *\n  ***\n *****\n*******\n *****\n  ***\n   *\n",
+              "testCases": [
+                {
+                  "input": "",
+                  "output": "Pattern with layers of stars as shown."
+                }
+              ]
+            },
+            {
+              "id": 55,
+              "text": "Write a program to print all the prime numbers from 1 to n.",
+              "testCases": [
+                {
+                  "input": "10",
+                  "output": "2 3 5 7"
+                },
+                {
+                  "input": "20",
+                  "output": "2 3 5 7 11 13 17 19"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Arrays (1D)",
+      "icon": "🔢",
+      "color": "#ffebcd",
+      "days": [
+        {
+          "day": 29,
+          "questions": [
+            {
+              "id": 56,
+              "text": "Read and print elements of a one-dimensional array.",
+              "testCases": [
+                {
+                  "input": "3\n10 20 30",
+                  "output": "10 20 30"
+                },
+                {
+                  "input": "5\n1 2 3 4 5",
+                  "output": "1 2 3 4 5"
+                }
+              ]
+            },
+            {
+              "id": 57,
+              "text": "Find the sum of array elements.",
+              "testCases": [
+                {
+                  "input": "4\n2 4 6 8",
+                  "output": "20"
+                },
+                {
+                  "input": "3\n1 1 1",
+                  "output": "3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 30,
+          "questions": [
+            {
+              "id": 58,
+              "text": "Find the maximum and minimum element in an array.",
+              "testCases": [
+                {
+                  "input": "5\n2 9 1 4 7",
+                  "output": "Max=9, Min=1"
+                },
+                {
+                  "input": "3\n10 10 10",
+                  "output": "Max=10, Min=10"
+                }
+              ]
+            },
+            {
+              "id": 59,
+              "text": "Count even and odd numbers in an array.",
+              "testCases": [
+                {
+                  "input": "6\n1 2 3 4 5 6",
+                  "output": "Even=3, Odd=3"
+                },
+                {
+                  "input": "4\n2 4 6 8",
+                  "output": "Even=4, Odd=0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 31,
+          "questions": [
+            {
+              "id": 60,
+              "text": "Count positive, negative, and zero elements in an array.",
+              "testCases": [
+                {
+                  "input": "5\n-1 0 1 2 -2",
+                  "output": "Positive=2, Negative=2, Zero=1"
+                }
+              ]
+            },
+            {
+              "id": 61,
+              "text": "Search for an element in an array using linear search.",
+              "testCases": [
+                {
+                  "input": "5\n1 2 3 4 5\n3",
+                  "output": "Found at index 2"
+                },
+                {
+                  "input": "4\n10 20 30 40\n25",
+                  "output": "-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 32,
+          "questions": [
+            {
+              "id": 62,
+              "text": "Reverse an array without taking extra space.",
+              "testCases": [
+                {
+                  "input": "4\n1 2 3 4",
+                  "output": "4 3 2 1"
+                }
+              ]
+            },
+            {
+              "id": 63,
+              "text": "Merge two arrays.",
+              "testCases": [
+                {
+                  "input": "3\n1 2 3\n2\n4 5",
+                  "output": "1 2 3 4 5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 33,
+          "questions": [
+            {
+              "id": 64,
+              "text": "Find the digit that occurs the most times in an integer number.",
+              "testCases": [
+                {
+                  "input": "112233",
+                  "output": "1"
+                },
+                {
+                  "input": "887799",
+                  "output": "7"
+                }
+              ]
+            },
+            {
+              "id": 65,
+              "text": "Search in a sorted array using binary search.",
+              "testCases": [
+                {
+                  "input": "5\n1 3 5 7 9\n7",
+                  "output": "Found at index 3"
+                },
+                {
+                  "input": "5\n1 3 5 7 9\n6",
+                  "output": "-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 34,
+          "questions": [
+            {
+              "id": 66,
+              "text": "Insert an element in a sorted array at the appropriate position.",
+              "testCases": [
+                {
+                  "input": "5\n1 2 4 5 6\n3",
+                  "output": "1 2 3 4 5 6"
+                }
+              ]
+            },
+            {
+              "id": 67,
+              "text": "Insert an element in an array at a given position.",
+              "testCases": [
+                {
+                  "input": "4\n10 20 30 40\n2 15",
+                  "output": "10 20 15 30 40"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 35,
+          "questions": [
+            {
+              "id": 68,
+              "text": "Delete an element from an array.",
+              "testCases": [
+                {
+                  "input": "5\n1 2 3 4 5\n2",
+                  "output": "1 2 4 5"
+                }
+              ]
+            },
+            {
+              "id": 69,
+              "text": "Find the second largest element in an array.",
+              "testCases": [
+                {
+                  "input": "5\n10 20 30 40 50",
+                  "output": "40"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 36,
+          "questions": [
+            {
+              "id": 70,
+              "text": "Rotate an array to the right by k positions.",
+              "testCases": [
+                {
+                  "input": "5\n1 2 3 4 5\n2",
+                  "output": "4 5 1 2 3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "2D Arrays",
+      "icon": "🔲",
+      "color": "#d3e0ea",
+      "days": [
+        {
+          "day": 37,
+          "questions": [
+            {
+              "id": 71,
+              "text": "Read and print a matrix.",
+              "testCases": [
+                {
+                  "input": "2 2\n1 2\n3 4",
+                  "output": "1 2\n3 4"
+                }
+              ]
+            },
+            {
+              "id": 72,
+              "text": "Find the sum of all elements in a matrix.",
+              "testCases": [
+                {
+                  "input": "2 3\n1 2 3\n4 5 6",
+                  "output": "21"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 38,
+          "questions": [
+            {
+              "id": 73,
+              "text": "Find the sum of each row of a matrix and store it in an array.",
+              "testCases": [
+                {
+                  "input": "2 3\n1 2 3\n4 5 6",
+                  "output": "6 15"
+                }
+              ]
+            },
+            {
+              "id": 74,
+              "text": "Find the transpose of a matrix.",
+              "testCases": [
+                {
+                  "input": "2 3\n1 2 3\n4 5 6",
+                  "output": "1 4\n2 5\n3 6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 39,
+          "questions": [
+            {
+              "id": 75,
+              "text": "Add two matrices.",
+              "testCases": [
+                {
+                  "input": "2 2\n1 2\n3 4\n2 2\n5 6\n7 8",
+                  "output": "6 8\n10 12"
+                }
+              ]
+            },
+            {
+              "id": 76,
+              "text": "Check if a matrix is symmetric.",
+              "testCases": [
+                {
+                  "input": "2 2\n1 2\n2 1",
+                  "output": "True"
+                },
+                {
+                  "input": "2 2\n1 0\n2 1",
+                  "output": "False"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 40,
+          "questions": [
+            {
+              "id": 77,
+              "text": "Check if the elements on the diagonal of a matrix are distinct.",
+              "testCases": [
+                {
+                  "input": "3 3\n1 2 3\n4 5 6\n7 8 1",
+                  "output": "False"
+                },
+                {
+                  "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+                  "output": "True"
+                }
+              ]
+            },
+            {
+              "id": 78,
+              "text": "Find the sum of main diagonal elements for a square matrix.",
+              "testCases": [
+                {
+                  "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+                  "output": "15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 41,
+          "questions": [
+            {
+              "id": 79,
+              "text": "Perform diagonal traversal of a matrix.",
+              "testCases": [
+                {
+                  "input": "3 3\n1 2 3\n4 5 6\n7 8 9",
+                  "output": "1 2 4 7 5 3 6 8 9"
+                }
+              ]
+            },
+            {
+              "id": 80,
+              "text": "Multiply two matrices.",
+              "testCases": [
+                {
+                  "input": "2 3\n1 2 3\n4 5 6\n3 2\n7 8\n9 10\n11 12",
+                  "output": "58 64\n139 154"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Strings",
+      "icon": "🔤",
+      "color": "#dcdcdc",
+      "days": [
+        {
+          "day": 42,
+          "questions": [
+            {
+              "id": 81,
+              "text": "Count characters in a string without using built-in length functions.",
+              "testCases": [
+                {
+                  "input": "Hello",
+                  "output": "5"
+                },
+                {
+                  "input": " ",
+                  "output": "1"
+                }
+              ]
+            },
+            {
+              "id": 82,
+              "text": "Print each character of a string on a new line.",
+              "testCases": [
+                {
+                  "input": "Hi",
+                  "output": "H\ni"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 43,
+          "questions": [
+            {
+              "id": 83,
+              "text": "Count vowels and consonants in a string.",
+              "testCases": [
+                {
+                  "input": "hello",
+                  "output": "Vowels=2, Consonants=3"
+                }
+              ]
+            },
+            {
+              "id": 84,
+              "text": "Convert a lowercase string to uppercase without using built-in functions.",
+              "testCases": [
+                {
+                  "input": "hello",
+                  "output": "HELLO"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 44,
+          "questions": [
+            {
+              "id": 85,
+              "text": "Reverse a string.",
+              "testCases": [
+                {
+                  "input": "abcd",
+                  "output": "dcba"
+                }
+              ]
+            },
+            {
+              "id": 86,
+              "text": "Check if a string is a palindrome.",
+              "testCases": [
+                {
+                  "input": "madam",
+                  "output": "Palindrome"
+                },
+                {
+                  "input": "hello",
+                  "output": "Not palindrome"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 45,
+          "questions": [
+            {
+              "id": 87,
+              "text": "Count spaces, digits, and special characters in a string.",
+              "testCases": [
+                {
+                  "input": "a b1&2",
+                  "output": "Spaces=1, Digits=2, Special=1"
+                }
+              ]
+            },
+            {
+              "id": 88,
+              "text": "Replace spaces with hyphens in a string.",
+              "testCases": [
+                {
+                  "input": "hello world",
+                  "output": "hello-world"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 46,
+          "questions": [
+            {
+              "id": 89,
+              "text": "Count frequency of a given character in a string.",
+              "testCases": [
+                {
+                  "input": "programming\ng",
+                  "output": "2"
+                }
+              ]
+            },
+            {
+              "id": 90,
+              "text": "Toggle case of each character in a string.",
+              "testCases": [
+                {
+                  "input": "Hello",
+                  "output": "hELLO"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 47,
+          "questions": [
+            {
+              "id": 91,
+              "text": "Remove all vowels from a string.",
+              "testCases": [
+                {
+                  "input": "education",
+                  "output": "dctn"
+                }
+              ]
+            },
+            {
+              "id": 92,
+              "text": "Find the first repeating lowercase alphabet in a string.",
+              "testCases": [
+                {
+                  "input": "stress",
+                  "output": "s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 48,
+          "questions": [
+            {
+              "id": 93,
+              "text": "Check if two strings are anagrams of each other.",
+              "testCases": [
+                {
+                  "input": "listen\nsilent",
+                  "output": "Anagrams"
+                },
+                {
+                  "input": "hello\nworld",
+                  "output": "Not anagrams"
+                }
+              ]
+            },
+            {
+              "id": 94,
+              "text": "Find the longest word in a sentence.",
+              "testCases": [
+                {
+                  "input": "I love programming",
+                  "output": "programming"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 49,
+          "questions": [
+            {
+              "id": 95,
+              "text": "Check if one string is a rotation of another.",
+              "testCases": [
+                {
+                  "input": "abcde\ndeabc",
+                  "output": "Rotation"
+                },
+                {
+                  "input": "abc\nacb",
+                  "output": "Not rotation"
+                }
+              ]
+            },
+            {
+              "id": 96,
+              "text": "Reverse each word in a sentence without changing the word order.",
+              "testCases": [
+                {
+                  "input": "I love coding",
+                  "output": "I evol gnidoc"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 50,
+          "questions": [
+            {
+              "id": 97,
+              "text": "Print the initials of a name.",
+              "testCases": [
+                {
+                  "input": "John Doe",
+                  "output": "J.D."
+                }
+              ]
+            },
+            {
+              "id": 98,
+              "text": "Print initials of a name with the surname displayed in full.",
+              "testCases": [
+                {
+                  "input": "John David Doe",
+                  "output": "J.D. Doe"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 51,
+          "questions": [
+            {
+              "id": 99,
+              "text": "Change the date format from dd/04/yyyy to dd-Apr-yyyy.",
+              "testCases": [
+                {
+                  "input": "15/04/2025",
+                  "output": "15-Apr-2025"
+                }
+              ]
+            },
+            {
+              "id": 100,
+              "text": "Print all sub-strings of a string.",
+              "testCases": [
+                {
+                  "input": "abc",
+                  "output": "a,ab,abc,b,bc,c"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Logic Enhancers",
+      "icon": "🔤",
+      "color": "#DFC57B",
+      "days": [
+        {
+          "day": 52,
+          "questions": [
+            {
+              "id": 101,
+              "text": "Write a Program to take a sorted array(say nums[]) and an integer (say target) as inputs. The elements in the sorted array might be repeated. You need to print the first and last occurrence of the target and print the index of first and last occurrence. Print -1, -1 if the target is not present.",
+              "testCases": [
+                {
+                  "input": "nums = [5,7,7,8,8,10], target = 8",
+                  "output": "3,4"
+                },
+                {
+                  "input": " nums = [5,7,7,8,8,10], target = 6",
+                  "output": "-1,-1"
+                },
+                {
+                  "input": " nums = [5,7,7,8,8,10], target = 10",
+                  "output": "5,5"
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up(optional): Can you do it in O(log n) Time Complexity?"
+              }
+            }
+          ]
+        },
+        {
+          "day": 53,
+          "questions": [
+            {
+              "id": 102,
+              "text": "Write a Program to take a sorted array arr[] and an integer x as input, find the index (0-based) of the smallest element in arr[] that is greater than or equal to x and print it. This element is called the ceil of x. If such an element does not exist, print -1. Note: In case of multiple occurrences of ceil of x, return the index of the first occurrence.",
+              "testCases": [
+                {
+                  "input": "arr = [1, 2, 8, 10, 11, 12, 19], x = 5",
+                  "output": "2",
+                  "explanation": "Smallest number greater than 5 is 8, whose index is 2."
+                },
+                {
+                  "input": "arr = [1, 2, 8, 10, 11, 12, 19], x = 20",
+                  "output": "-1",
+                  "explanation": "No element greater than 20 is found. So output is -1."
+                },
+                {
+                  "input": "arr = [1, 1, 2, 8, 10, 11, 12, 19], x = 0",
+                  "output": "0",
+                  "explanation": "Smallest number greater than 0 is 1, whose indices are 0 and 1. The index of the first occurrence is 0."
+                },
+                {
+                  "input": "arr = [1, 1, 2, 8, 10, 11, 12, 19], x = 2",
+                  "output": "2",
+                  "explanation": "If x is directly present, return the index of its first occurrence. "
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up(optional): Can you do it in O(log n) Time Complexity?"
+              }
+            }
+          ]
+        },
+        {
+          "day": 54,
+          "questions": [
+            {
+              "id": 103,
+              "text": "Write a Program to take an array of integers as input, calculate the pivot index of this array. The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right. If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array. Print the leftmost pivot index. If no such index exists, print -1.",
+              "testCases": [
+                {
+                  "input": "nums = [1,7,3,6,5,6]",
+                  "output": "3",
+                  "explanation": "The pivot index is 3. Left sum = 1 + 7 + 3 = 11, Right sum = 5 + 6 = 11."
+                },
+                {
+                  "input": "nums = [1,2,3]",
+                  "output": "-1",
+                  "explanation": "There is no index that satisfies the conditions in the problem statement."
+                },
+                {
+                  "input": "nums = [2,1,-1]",
+                  "output": "0",
+                  "explanation": "The pivot index is 0. Left sum = 0 (no elements to the left), Right sum = 1 + (-1) = 0."
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up(optional): Try to solve this in O(n) TC"
+              }
+            }
+          ]
+        },
+        {
+          "day": 55,
+          "questions": [
+            {
+              "id": 104,
+              "text": "Write a Program to take a positive integer n as input, and find the pivot integer x such that the sum of all elements between 1 and x inclusively equals the sum of all elements between x and n inclusively. Print the pivot integer x. If no such integer exists, print -1. Assume that it is guaranteed that there will be at most one pivot integer for the given input.",
+              "testCases": [
+                {
+                  "input": "n = 8",
+                  "output": "6",
+                  "explanation": "6 is the pivot integer since: 1 + 2 + 3 + 4 + 5 + 6 = 6 + 7 + 8 = 21."
+                },
+                {
+                  "input": "n = 1",
+                  "output": "1",
+                  "explanation": "1 is the pivot integer since: 1 = 1."
+                },
+                {
+                  "input": "n = 4",
+                  "output": "-1",
+                  "explanation": "It can be proved that no such integer exists."
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up 1 (optional): Can you do it in O(log n) Time Complexity? Follow-up 2 (optional): Can you do it in O(1) Time Complexity?"
+              }
+            }
+          ]
+        },
+        {
+          "day": 56,
+          "questions": [
+            {
+              "id": 105,
+              "text": "Write a program to take an integer array nums of size n, and print the majority element. The majority element is the element that appears strictly more than ⌊n / 2⌋ times. Print -1 if no such element exists. Note: Majority Element is not necessarily the element that is present most number of times.",
+              "testCases": [
+                {
+                  "input": "nums = [3,2,3]",
+                  "output": "3",
+                  "explanation": "Size = 3, Count of 3 = 2 → 2 > 3/2. Thus, 3 is the majority element."
+                },
+                {
+                  "input": "nums = [2,2,1,1,1,2,2]",
+                  "output": "2",
+                  "explanation": "Size = 7, Count of 2 = 4 → 4 > 7/2. Thus, 2 is the majority element."
+                },
+                {
+                  "input": "nums = [2,2,1,1,1,2,2,3]",
+                  "output": "-1",
+                  "explanation": "Size = 8, Count of 2 = 4 → 4 is not strictly greater than 8/2. Hence, no majority element exists."
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up (optional): Can you do it in O(n) Time Complexity?"
+              }
+            }
+          ]
+        },
+        {
+          "day": 57,
+          "questions": [
+            {
+              "id": 106,
+              "text": "Write a program to take an array arr[] of integers as input, the task is to find the next greater element for each element of the array in order of their appearance in the array. Next greater element of an element in the array is the nearest element on the right which is greater than the current element. If there does not exist next greater of current element, then next greater element for current element is -1.\n\nN.B:\n- Print the output for each element in a comma separated fashion.\n- Do not use Stack, use brute force approach (nested loop) to solve.",
+              "testCases": [
+                {
+                  "input": "arr = [1, 3, 2, 4]",
+                  "output": "3, 4, 4, -1",
+                  "explanation": "The next larger element to 1 is 3, for 3 it is 4, for 2 it is 4 and for 4 there is no next greater element so it is -1."
+                },
+                {
+                  "input": "arr = [6, 8, 0, 1, 3]",
+                  "output": "8, -1, 1, 3, -1",
+                  "explanation": "Next greater element for 6 is 8, for 8 it is -1, for 0 it is 1, for 1 it is 3 and for 3 there is no greater element on right hence -1."
+                },
+                {
+                  "input": "arr = [1, 2, 3, 5]",
+                  "output": "2, 3, 5, -1",
+                  "explanation": "In a sorted array, each element’s next greater is its immediate next element except for the last element which has none, so -1."
+                },
+                {
+                  "input": "arr = [5, 4, 3, 1]",
+                  "output": "-1, -1, -1, -1",
+                  "explanation": "No element has a greater element on its right, so all next greater elements are -1."
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Try solving this using brute force (nested loop). No need of attempting the optimized stack-based solution."
+              }
+            }
+          ]
+        },
+        {
+          "day": 58,
+          "questions": [
+            {
+              "id": 107,
+              "text": "Write a program to take an array arr[] of integers as input, the task is to find the previous greater element for each element of the array in order of their appearance in the array. Previous greater element of an element in the array is the nearest element on the left which is greater than the current element. If there does not exist next greater of current element, then previous greater element for current element is -1.\n\nN.B:\n- Print the output for each element in a comma separated fashion.\n- Do not use Stack, use brute force approach (nested loop) to solve.",
+              "testCases": [
+                {
+                  "input": "arr = [1, 3, 2, 4]",
+                  "output": "-1, -1, 3, -1"
+                },
+                {
+                  "input": "arr = [6, 8, 0, 1, 3]",
+                  "output": "-1, -1, 8, 8, 8"
+                },
+                {
+                  "input": "arr = [1, 2, 3, 5]",
+                  "output": "-1, -1, -1, -1"
+                },
+                {
+                  "input": "arr = [5, 4, 3, 1]",
+                  "output": "-1, 5, 4, 3"
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Try solving this using brute force (nested loop). No need of attempting the optimized stack-based solution."
+              }
+            }
+          ]
+        },
+        {
+          "day": 59,
+          "questions": [
+            {
+              "id": 108,
+              "text": "Write a Program to take an integer array nums. Print an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.",
+              "testCases": [
+                {
+                  "input": "nums = [1,2,3,4]",
+                  "output": "[24,12,8,6]"
+                },
+                {
+                  "input": "nums = [-1,1,0,-3,3]",
+                  "output": "[0,0,9,0,0]"
+                }
+              ],
+              "notes": {
+                "type": "text",
+                "value": "Follow-up(optional): Can you write a code that runs in O(n) time and without using the division operation."
+              }
+            }
+          ]
+        },
+        {
+          "day": 60,
+          "questions": [
+            {
+              "id": 109,
+              "text": "Write a program to take an integer array arr and an integer k as inputs. Print the maximum sum of all the subarrays of size k.",
+              "testCases": [
+                {
+                  "input": "arr[100, 200, 300, 400] = , k = 2",
+                  "output": "700",
+                  "explanation": "arr2 + arr3 = 700, which is maximum."
+                },
+                {
+                  "input": "arr[1, 4, 2, 10, 23, 3, 1, 0, 20] = , k = 4",
+                  "output": "39",
+                  "explanation": "arr1 + arr2 + arr3 + arr4 = 39, which is maximum."
+                },
+                {
+                  "input": "arr[100, 200, 300, 400] = , k = 1",
+                  "output": "400",
+                  "explanation": "arr3 = 400, which is maximum."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 61,
+          "questions": [
+            {
+              "id": 110,
+              "text": "Write a program to take an integer array arr and an integer k as inputs. The task is to find the maximum element in each subarray of size k moving from left to right. Print the maximum elements for each window separated by spaces as output.",
+              "testCases": [
+                {
+                  "input": "arr[1, 2, 3, 1, 4, 5, 2, 3, 6] = , k = 3",
+                  "output": "3 3 4 5 5 5 6",
+                  "explanation": "1st contiguous subarray , max = 3; 2nd contiguous subarray , max = 3; 3rd contiguous subarray , max = 4; 4th contiguous subarray , max = 5; 5th contiguous subarray , max = 5; 6th contiguous subarray , max = 5; 7th contiguous subarray , max = 6."
+                },
+                {
+                  "input": "arr[5, 1, 3, 4, 2] = , k = 1",
+                  "output": "5 1 3 4 2",
+                  "explanation": "When k = 1, each element in the array is its own subarray, so the output is simply the same array."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 62,
+          "questions": [
+            {
+              "id": 111,
+              "text": "Write a program to take an integer array arr and an integer k as inputs. The task is to find the first negative integer in each subarray of size k moving from left to right. If no negative exists in a window, print \"0\" for that window. Print the results separated by spaces as output.",
+              "testCases": [
+                {
+                  "input": "arr[] = [-8, 2, 3, -6, 10], k = 2",
+                  "output": "-8 0 -6 -6",
+                  "explanation": "Window [-8, 2] First negative integer is -8. Window No negative integers, output is 0. Window [3, -6] First negative integer is -6. Window [-6, 10] First negative integer is -6."
+                },
+                {
+                  "input": "arr[] = [12, -1, -7, 8, -15, 30, 16, 28], k = 3",
+                  "output": "-1 -1 -7 -15 -15 0",
+                  "explanation": "Window [12, -1, -7] First negative integer is -1. Window [-1, -7, 8] First negative integer is -1. Window [-7, 8, -15] First negative integer is -7. Window [8, -15, 30] First negative integer is -15. Window [-15, 30, 16] First negative integer is -15. Window No negative integers, output is 0."
+                },
+                {
+                  "input": "arr[] = [12, 1, 3, 5], k = 3",
+                  "output": "0 0",
+                  "explanation": "Window No negative integers, output is 0. Window No negative integers, output is 0."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 63,
+          "questions": [
+            {
+              "id": 112,
+              "text": "Write a program to take an integer array arr as input. The task is to find the maximum sum of any contiguous subarray using Kadane's algorithm. Print the maximum sum as output. If all elements are negative, print the largest (least negative) element.",
+              "testCases": [
+                {
+                  "input": "arr[] = [2, 3, -8, 7, -1, 2, 3]",
+                  "output": "11",
+                  "explanation": "The subarray [7, -1, 2, 3] has the largest sum 11."
+                },
+                {
+                  "input": "arr[] = [-2, -4]",
+                  "output": "-2",
+                  "explanation": "The subarray [-2] has the largest sum -2."
+                },
+                {
+                  "input": "arr[] = [5, 4, 1, 7, 8]",
+                  "output": "25",
+                  "explanation": "The subarray has the largest sum 25."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 64,
+          "questions": [
+            {
+              "id": 113,
+              "text": "Write a program to take an integer array arr and an integer k as inputs. The task is to find the kth smallest element in the array. Print the kth smallest element as output.",
+              "testCases": [
+                {
+                  "input": "arr[] = [10, 5, 4, 3, 48, 6, 2, 33, 53, 10], k = 4",
+                  "output": "5",
+                  "explanation": "4th smallest element in the given array is 5."
+                },
+                {
+                  "input": "arr[] = [7, 10, 4, 3, 20, 15], k = 3",
+                  "output": "7",
+                  "explanation": "3rd smallest element in the given array is 7."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 65,
+          "questions": [
+            {
+              "id": 114,
+              "text": "Write a program to take a string s as input. The task is to find the length of the longest substring without repeating characters. Print the length as output.",
+              "testCases": [
+                {
+                  "input": "s = \"abcabcbb\"",
+                  "output": "3",
+                  "explanation": "The answer is \"abc\", with the length of 3. Note that \"bca\" and \"cab\" are also correct answers."
+                },
+                {
+                  "input": "s = \"bbbbb\"",
+                  "output": "1",
+                  "explanation": "The answer is \"b\", with the length of 1."
+                },
+                {
+                  "input": "s = \"pwwkew\"",
+                  "output": "3",
+                  "explanation": "The answer is \"wke\", with the length of 3. Notice that the answer must be a substring, \"pwke\" is a subsequence and not a substring."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 66,
+          "questions": [
+            {
+              "id": 115,
+              "text": "Write a program to take two strings s and t as inputs (assume all characters are lowercase). The task is to determine if s and t are valid anagrams, meaning they contain the same characters with the same frequencies. Print \"Anagram\" if they are, otherwise \"Not Anagram\".",
+              "testCases": [
+                {
+                  "input": "s = \"anagram\", t = \"nagaram\"",
+                  "output": "Anagram",
+                  "explanation": "The strings contain the same characters with the same frequencies."
+                },
+                {
+                  "input": "s = \"rat\", t = \"car\"",
+                  "output": "Not Anagram",
+                  "explanation": "The strings do not contain the same characters."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 67,
+          "questions": [
+            {
+              "id": 116,
+              "text": "Write a program to take an integer array nums which contains only positive integers, and an integer target as inputs. The goal is to find two distinct indices i and j in the array such that nums[i] + nums[j] equals the target. Assume exactly one solution exists and return the indices in any order. Print the two indices separated by a space as output. If no solution exists, print \"-1 -1\".",
+              "testCases": [
+                {
+                  "input": "nums = [2,7,11,15], target = 9",
+                  "output": "0 1",
+                  "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+                },
+                {
+                  "input": "nums = [3,2,4], target = 6",
+                  "output": "1 2"
+                },
+                {
+                  "input": "nums = [3,3], target = 6",
+                  "output": "0 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 68,
+          "questions": [
+            {
+              "id": 117,
+              "text": "Write a program to take two sorted arrays of size m and n as input. Merge both the arrays such that the merged array is also sorted. Print the merged array.",
+              "testCases": [
+                {
+                  "input": "nums1 = [2,7,11,15] nums2 = [4,8,10]",
+                  "output": "2 4 7 8 10 11 15"
+                },
+                {
+                  "input": "nums1 = [1,2,7] nums2 = [9,10,17]",
+                  "output": "1 2 7 9 10 17"
+                },
+                {
+                  "input": "nums1 = [-10,-2,7] nums2 = [-3, -1, 7]",
+                  "output": "-10 -3 -2 -1 7 7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 69,
+          "questions": [
+            {
+              "id": 118,
+              "text": "Write a program to take an input array of size n. The array should contain all the integers between 0 to n except for one. Print that missing number",
+              "testCases": [
+                {
+                  "input": "nums1 = [0,3,2,4]",
+                  "output": "1"
+                },
+                {
+                  "input": "nums1 = [1,2,3]",
+                  "output": "0"
+                },
+                {
+                  "input": "nums1 = [0,4,3,1,5]",
+                  "output": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 70,
+          "questions": [
+            {
+              "id": 119,
+              "text": "Write a program to take an integer array as input. Only one element will be repeated. Print the repeated element. Try to find the result in one single iteration.",
+              "testCases": [
+                {
+                  "input": "nums1 = [1,3,3,4]",
+                  "output": "3"
+                },
+                {
+                  "input": "nums1 = [1,2,2]",
+                  "output": "2"
+                },
+                {
+                  "input": "nums1 = [0,4,1,1,5]",
+                  "output": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "File Handling",
+      "icon": "📁",
+      "color": "#0FC17B",
+      "days": [
+        {
+          "day": 71,
+          "questions": [
+            {
+              "id": 120,
+              "text": "Write a program to take a string input. Change it to sentence case.",
+              "testCases": [
+                {
+                  "input": "str = I am trying to build logic.",
+                  "output": "I Am Trying To Build Logic"
+                },
+                {
+                  "input": "str = The classes are supposed to start early.",
+                  "output": "The Classes Are Supposed To Start Early."
+                },
+                {
+                  "input": "str = We are going to look at 26 different test cases.",
+                  "output": "We Are Going To Look At 26 Different Test Cases."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 72,
+          "questions": [
+            {
+              "id": 121,
+              "text": "Write a C program that creates a text file named info.txt in write mode. The program should take the user’s name and age as input, and write them to the file using fprintf(). After writing, display a message confirming that the data was successfully saved.",
+              "testCases": [
+                {
+                  "input": "Name: Rahul, Age: 23",
+                  "output": "File created successfully! Data written to info.txt",
+                  "explanation": "Expected File Content (info.txt): Name: Rahul Age: 23"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 73,
+          "questions": [
+            {
+              "id": 122,
+              "text": "Write a C program that opens an existing file (e.g., info.txt) and reads its contents using fgets(). The program should print all the lines to the console until EOF (end of file) is reached.",
+              "testCases": [
+                {
+                  "input": "File: info.txt (Content: Name: Rahul\\nAge: 23)",
+                  "output": "Name: Rahul\nAge: 23",
+                  "explanation": "The program reads each line from info.txt using fgets() and prints it until EOF."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 74,
+          "questions": [
+            {
+              "id": 123,
+              "text": "Read a text file and count the total number of characters, words, and lines. A word is defined as a sequence of non-space characters separated by spaces or newlines.",
+              "testCases": [
+                {
+                  "input": "File: sample.txt (Content: Hello world\\nThis is C programming)",
+                  "output": "Characters: 31\nWords: 5\nLines: 2",
+                  "explanation": "The file has 31 characters including spaces and newlines, 5 words, and 2 lines."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 75,
+          "questions": [
+            {
+              "id": 124,
+              "text": "Take two filenames from the user – a source file and a destination file. Copy all the content from the source file to the destination file using fgetc() and fputc().",
+              "testCases": [
+                {
+                  "input": "Source File: source.txt (Content: Learning C File Handling)",
+                  "output": "File copied successfully to destination.txt",
+                  "explanation": "Expected File (destination.txt): Learning C File Handling"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 76,
+          "questions": [
+            {
+              "id": 125,
+              "text": "Open an existing file in append mode and allow the user to enter a new line of text. Append the text at the end without overwriting existing content.",
+              "testCases": [
+                {
+                  "input": "Existing File: data.txt (Content before execution: Hello world)\nUser Input: This is appended text.",
+                  "output": "File updated successfully with appended text.",
+                  "explanation": "Output File (data.txt after execution): Hello world\\nThis is appended text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 77,
+          "questions": [
+            {
+              "id": 126,
+              "text": "Ask the user for a filename. Check if it exists by trying to open it in read mode. If the file pointer is NULL, print an error message; otherwise, read and display its content.",
+              "testCases": [
+                {
+                  "input": "Filename: sample.txt (File Exists: Yes)",
+                  "output": "File opened successfully.\n(Displays file content)",
+                  "explanation": "The program opens the existing file and prints its content using fgets()."
+                },
+                {
+                  "input": "Filename: nofile.txt (File Exists: No)",
+                  "output": "Error: File does not exist!",
+                  "explanation": "Since fopen() returns NULL, an error message is displayed instead of reading."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 78,
+          "questions": [
+            {
+              "id": 127,
+              "text": "Write a program that reads text from input.txt, converts all lowercase letters to uppercase, and writes the result to output.txt.",
+              "testCases": [
+                {
+                  "input": "Input File (input.txt): Hello World\\nC programming",
+                  "output": "Output File (output.txt): HELLO WORLD\\nC PROGRAMMING",
+                  "explanation": "All lowercase letters in input.txt are converted to uppercase using character manipulation before writing to output.txt."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 79,
+          "questions": [
+            {
+              "id": 128,
+              "text": "Read a text file and count how many vowels and consonants are in the file. Ignore digits and special characters.",
+              "testCases": [
+                {
+                  "input": "File: text.txt (Content: Welcome to C language)",
+                  "output": "Vowels: 8\nConsonants: 10",
+                  "explanation": "The program iterates through each character, counts vowels (A, E, I, O, U) and consonants, ignoring other symbols."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 80,
+          "questions": [
+            {
+              "id": 129,
+              "text": "A file numbers.txt contains a list of integers separated by spaces. Read all integers, compute their sum and average, and print both.",
+              "testCases": [
+                {
+                  "input": "File: numbers.txt (Content: 10 20 30 40 50)",
+                  "output": "Sum = 150\nAverage = 30.00",
+                  "explanation": "The program reads integers from the file, computes their total sum (150), and calculates the average (30.00)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 81,
+          "questions": [
+            {
+              "id": 130,
+              "text": "Store multiple student records (name, roll number, marks) into a file using fprintf(). Then read them using fscanf() and display each record.",
+              "testCases": [
+                {
+                  "input": "Student 1 → Name: Asha, Roll: 101, Marks: 85; Student 2 → Name: Ravi, Roll: 102, Marks: 92",
+                  "output": "Name: Asha | Roll: 101 | Marks: 85\nName: Ravi | Roll: 102 | Marks: 92",
+                  "explanation": "Expected File Content (students.txt): Asha 101 85\\nRavi 102 92"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Enum",
+      "icon": "🧱",
+      "color": "#0CF1B7",
+      "days": [
+        {
+          "day": 82,
+          "questions": [
+            {
+              "id": 131,
+              "text": "Create an enumeration for days (SUNDAY to SATURDAY) and print each day with its integer value.",
+              "testCases": [
+                {
+                  "input": "No input",
+                  "output": "SUNDAY = 0\nMONDAY = 1\nTUESDAY = 2\nWEDNESDAY = 3\nTHURSDAY = 4\nFRIDAY = 5\nSATURDAY = 6",
+                  "explanation": "Each day in the enum is automatically assigned an integer starting from 0."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 83,
+          "questions": [
+            {
+              "id": 132,
+              "text": "Define an enum for traffic lights (RED, YELLOW, GREEN) and print 'Stop', 'Wait', or 'Go' based on its value.",
+              "testCases": [
+                {
+                  "input": "GREEN",
+                  "output": "Go",
+                  "explanation": "When the enum value is GREEN, the program prints 'Go'."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 84,
+          "questions": [
+            {
+              "id": 133,
+              "text": "Create an enum for months and print how many days each month has.",
+              "testCases": [
+                {
+                  "input": "FEB",
+                  "output": "28 or 29 days",
+                  "explanation": "February has 28 days in a normal year and 29 in a leap year."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 85,
+          "questions": [
+            {
+              "id": 134,
+              "text": "Define an enum with SUCCESS, FAILURE, and TIMEOUT, and print messages accordingly.",
+              "testCases": [
+                {
+                  "input": "FAILURE",
+                  "output": "Operation failed",
+                  "explanation": "FAILURE corresponds to a failed operation message."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 86,
+          "questions": [
+            {
+              "id": 135,
+              "text": "Assign explicit values starting from 10 and print them.",
+              "testCases": [
+                {
+                  "input": "No input",
+                  "output": "A=10\nB=11\nC=12",
+                  "explanation": "Enum values can be explicitly assigned; subsequent values auto-increment."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 87,
+          "questions": [
+            {
+              "id": 136,
+              "text": "Use enum to represent menu choices (ADD, SUBTRACT, MULTIPLY) and perform operations using switch.",
+              "testCases": [
+                {
+                  "input": "ADD 10 20",
+                  "output": "30",
+                  "explanation": "The enum ADD triggers addition of 10 and 20."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 88,
+          "questions": [
+            {
+              "id": 137,
+              "text": "Create an enum for user roles (ADMIN, USER, GUEST) and display messages based on role.",
+              "testCases": [
+                {
+                  "input": "GUEST",
+                  "output": "Welcome Guest!",
+                  "explanation": "Enum value determines which message is displayed."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 89,
+          "questions": [
+            {
+              "id": 138,
+              "text": "Print all enum names and integer values using a loop.",
+              "testCases": [
+                {
+                  "input": "No input",
+                  "output": "RED=0\nYELLOW=1\nGREEN=2",
+                  "explanation": "Iterating through enum values prints each constant with its assigned integer."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 90,
+          "questions": [
+            {
+              "id": 139,
+              "text": "Show that enums store integers by printing assigned values.",
+              "testCases": [
+                {
+                  "input": "No input",
+                  "output": "SUCCESS=0, FAILURE=1, TIMEOUT=2",
+                  "explanation": "Enum constants are internally stored as integer values starting from 0."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 91,
+          "questions": [
+            {
+              "id": 140,
+              "text": "Define a struct with enum Gender and print person's gender.",
+              "testCases": [
+                {
+                  "input": "Gender=MALE",
+                  "output": "Male",
+                  "explanation": "The enum inside the struct allows representing gender as a named constant."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Enum",
+      "icon": "🧱",
+      "color": "#0CF1B7",
+      "days": [
+        {
+          "day": 92,
+          "questions": [
+            {
+              "id": 141,
+              "text": "Define a structure Student with name, roll_no, and marks, then read and print one student's data.",
+              "testCases": [
+                {
+                  "input": "Name: Asha\nRoll: 101\nMarks: 90",
+                  "output": "Name: Asha | Roll: 101 | Marks: 90",
+                  "explanation": "The program stores and displays one student's details using structure members."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 93,
+          "questions": [
+            {
+              "id": 142,
+              "text": "Store details of 5 students in an array of structures and print all.",
+              "testCases": [
+                {
+                  "input": "Details of 5 students (Name, Roll, Marks)",
+                  "output": "Tabular list of all 5 students with their details",
+                  "explanation": "The array of structures stores multiple student records and displays them in a table."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 94,
+          "questions": [
+            {
+              "id": 143,
+              "text": "Find and print the student with the highest marks.",
+              "testCases": [
+                {
+                  "input": "3 students: Ravi 101 95, Sita 102 85, Aman 103 88",
+                  "output": "Topper: Ravi (Marks: 95)",
+                  "explanation": "Program compares marks of all students and prints the one with the highest."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 95,
+          "questions": [
+            {
+              "id": 144,
+              "text": "Write a function that accepts a structure as parameter and prints its members.",
+              "testCases": [
+                {
+                  "input": "Student: Neha 104 92",
+                  "output": "Name: Neha | Roll: 104 | Marks: 92",
+                  "explanation": "The structure is passed by value to a function that prints its data."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 96,
+          "questions": [
+            {
+              "id": 145,
+              "text": "Return a structure containing top student's details from a function.",
+              "testCases": [
+                {
+                  "input": "3 students: Riya 101 89, Karan 102 96, Meena 103 92",
+                  "output": "Top Student: Karan | Roll: 102 | Marks: 96",
+                  "explanation": "The function returns the structure containing the highest scoring student's details."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 97,
+          "questions": [
+            {
+              "id": 146,
+              "text": "Create Employee structure with nested Date structure for joining date and print details.",
+              "testCases": [
+                {
+                  "input": "Employee: Raj | ID: 11 | Joining Date: 12 05 2020",
+                  "output": "Name: Raj | ID: 11 | Joining Date: 12/05/2020",
+                  "explanation": "Nested structure Date is used inside Employee structure to represent joining date."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 98,
+          "questions": [
+            {
+              "id": 147,
+              "text": "Store employee data in a binary file using fwrite() and read using fread().",
+              "testCases": [
+                {
+                  "input": "Employee details entered and stored in file.",
+                  "output": "Displays employee data read from file.",
+                  "explanation": "Demonstrates writing and reading structures using binary file handling functions."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 99,
+          "questions": [
+            {
+              "id": 148,
+              "text": "Take two structs as input and check if they are identical.",
+              "testCases": [
+                {
+                  "input": "Student1: Asha 101 90\nStudent2: Asha 101 90",
+                  "output": "Same",
+                  "explanation": "Compares all structure members and prints 'Same' if identical."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 100,
+          "questions": [
+            {
+              "id": 149,
+              "text": "Use malloc() to allocate structure memory dynamically and print details.",
+              "testCases": [
+                {
+                  "input": "Student allocated dynamically with details: Tina 105 88",
+                  "output": "Name: Tina | Roll: 105 | Marks: 88",
+                  "explanation": "Memory for structure is dynamically allocated on heap using malloc()."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "day": 101,
+          "questions": [
+            {
+              "id": 150,
+              "text": "Use pointer to struct to modify and display data using -> operator.",
+              "testCases": [
+                {
+                  "input": "Student pointer modifying values: John 106 91",
+                  "output": "Modified Data: Name: John | Roll: 106 | Marks: 91",
+                  "explanation": "Pointer to structure accesses and modifies data using the arrow (->) operator."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

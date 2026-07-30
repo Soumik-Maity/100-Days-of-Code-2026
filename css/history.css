@@ -1,0 +1,123 @@
+/* ==========================================
+   History Modal
+========================================== */
+
+#history-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 5000;
+}
+
+#history-overlay[hidden] {
+  display: none;
+}
+
+#history-modal {
+  width: 700px;
+  max-width: 90vw;
+  max-height: 80vh;
+
+  background: var(--surface, #ffffff);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+     Header
+  ========================================== */
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 24px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#history-close {
+  background: none;
+  border: none;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ==========================================
+     List
+  ========================================== */
+
+#history-list {
+  overflow-y: auto;
+  padding: 12px 20px;
+}
+
+.history-empty {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+}
+
+/* ==========================================
+     Row
+  ========================================== */
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 10px;
+
+  border-bottom: 1px solid #ececec;
+}
+
+.history-row:last-child {
+  border-bottom: none;
+}
+
+.history-name {
+  flex: 1;
+  font-size: 15px;
+  color: #222;
+}
+
+/* ==========================================
+     Button
+  ========================================== */
+
+.history-open {
+  padding: 8px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  background: #2563eb;
+  color: white;
+
+  transition: background 0.2s;
+}
+
+.history-open:hover {
+  background: #1d4ed8;
+}

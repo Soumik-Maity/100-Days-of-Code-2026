@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>UPES 100 Days of Code</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/workspace.css" />
+    <link rel="stylesheet" href="css/revision.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/history.css" />
+    <link rel="stylesheet" href="css/instructions.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- ==========================================
+           Title Bar
+      =========================================== -->
+      <header id="title-bar">
+        <div class="app-brand">
+          <img src="assets/logo.png" alt="UPES" class="app-logo" />
+
+          <div class="app-title">
+            <div class="app-main-title">100 Days of Code</div>
+
+            <div class="app-sub-title">Coding Practice Platform</div>
+          </div>
+        </div>
+
+        <div class="title-actions">
+          <button id="instructions-button" class="title-button">
+            📖 Instructions
+          </button>
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="theme-slider"></span>
+          </label>
+        </div>
+      </header>
+
+      <!-- ==========================================
+           Main Layout
+      =========================================== -->
+      <div id="layout">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+          <nav>
+            <button
+              class="nav-item active"
+              id="dashboard-nav"
+              title="Dashboard"
+            >
+              <span class="icon">🏠</span>
+              <span class="label">Dashboard</span>
+            </button>
+
+            <button class="nav-item" id="workspace-nav" title="Workspace">
+              <span class="icon">💻</span>
+              <span class="label">Coding Workspace</span>
+            </button>
+
+            <button class="nav-item" id="revision-nav" title="Revision">
+              <span class="icon">📚</span>
+              <span class="label">Revision</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- ==========================================
+             Active View
+        =========================================== -->
+        <main id="view-container">
+          <!-- ======================================
+               Welcome
+          ======================================= -->
+          <section id="welcome-view">
+            <div class="welcome-card">
+              <h2>UPES 100 Days of Code</h2>
+
+              <p>Select a location to create your coding workspace.</p>
+
+              <p class="welcome-note">
+                Your code will be stored locally on your computer.
+              </p>
+
+              <button id="workspace-button">Choose Workspace</button>
+            </div>
+          </section>
+
+          <!-- ======================================
+               Dashboard
+          ======================================= -->
+          <section id="dashboard-view" hidden>
+            <!-- Welcome Banner -->
+            <div class="dashboard-hero">
+              <div class="dashboard-hero-content">
+                <h1>👋 Welcome to UPES 100 Days of Code</h1>
+
+                <h2 id="current-day">Day 1</h2>
+
+                <p id="current-chapter">User Inputs, Operations & Output</p>
+              </div>
+            </div>
+
+            <!-- Today's Questions -->
+            <section class="dashboard-section">
+              <div class="section-header">
+                <h2>Today's Questions</h2>
+              </div>
+
+              <!-- Generated dynamically -->
+              <div id="today-questions"></div>
+            </section>
+            <!-- ======================================
+            Progress
+            ====================================== -->
+
+            <section class="dashboard-section">
+              <div class="section-header">
+                <h2>Your Progress</h2>
+              </div>
+
+              <div id="dashboard-progress"></div>
+            </section>
+          </section>
+
+          <!-- ======================================
+               Workspace
+          ======================================= -->
+          <section id="workspace-view" hidden>
+            <!-- Header -->
+            <header class="workspace-header">
+              <div class="workspace-title">
+                <h2 id="workspace-question-id">Question 1</h2>
+
+                <p id="workspace-question-meta"></p>
+              </div>
+
+              <div class="workspace-actions">
+                <button
+                  id="history-button"
+                  class="toolbar-button history-button"
+                >
+                  🕘 History
+                </button>
+
+                <button id="save-button" class="toolbar-button save-button">
+                  💾 Save
+                </button>
+              </div>
+            </header>
+
+            <!-- Body -->
+            <div class="workspace-body">
+              <!-- Left Panel -->
+              <aside class="question-panel">
+                <!-- Problem -->
+                <section class="question-card">
+                  <div class="card-header">
+                    <h3>📄 Problem</h3>
+                  </div>
+
+                  <div class="card-content">
+                    <p id="question-text"></p>
+                  </div>
+                </section>
+
+                <!-- Test Cases -->
+                <section class="question-card">
+                  <div class="card-header">
+                    <h3>🧪 Test Cases</h3>
+                  </div>
+
+                  <div class="card-content" id="question-testcases"></div>
+                </section>
+
+                <!-- Notes -->
+                <section class="question-card" id="notes-section" hidden>
+                  <div class="card-header">
+                    <h3>💡 Notes</h3>
+                  </div>
+
+                  <div class="card-content" id="question-notes"></div>
+                </section>
+              </aside>
+
+              <!-- Right Panel -->
+              <section class="editor-panel">
+                <div class="editor-wrapper">
+                  <div class="editor-toolbar">
+                    <span id="editor-file-name"> Q001.c </span>
+
+                    <span id="editor-save-status"> Unsaved </span>
+                  </div>
+
+                  <div id="editor-container"></div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="workspace-footer">
+              <button id="previous-question">← Previous</button>
+
+              <button id="next-question">Next →</button>
+            </footer>
+          </section>
+
+          <!-- ======================================
+               Revision
+          ======================================= -->
+          <section id="revision-view" hidden>
+            <div class="revision-header">
+              <h2>Revision</h2>
+            </div>
+
+            <div id="revision-list"></div>
+          </section>
+        </main>
+      </div>
+
+      <!-- ==========================================
+           Status Bar
+      =========================================== -->
+      <footer id="status-bar">
+        <div class="status-left">
+          <span id="status-day">Day: --</span>
+      
+          <span id="status-question">--</span>
+      
+          <span id="status-save">Workspace Not Selected</span>
+      
+          <span id="status-theme">Dark</span>
+        </div>
+      
+        <div class="status-right">
+          © Soumik Maity
+        </div>
+      </footer>
+    <!-- ==========================================
+     History Modal
+========================================== -->
+
+    <div id="history-overlay" hidden>
+      <div id="history-modal">
+        <div class="history-header">
+          <h2>History</h2>
+
+          <button id="history-close">✕</button>
+        </div>
+
+        <div id="history-list"></div>
+      </div>
+    </div>
+    <div id="instructions-overlay" hidden>
+      <div id="instructions-modal">
+        <div class="instructions-header">
+          <h2>Student Guide</h2>
+
+          <button id="instructions-close">✕</button>
+        </div>
+
+        <div id="instructions-content">
+          <!-- Your guide goes here -->
+        </div>
+      </div>
+    </div>
+    <!-- Global Containers -->
+    <div id="modal-root"></div>
+
+    <div id="toast-root"></div>
+
+    <!-- Monaco -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+
+    <!-- Entry -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

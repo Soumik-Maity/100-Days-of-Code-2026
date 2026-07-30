@@ -1,0 +1,444 @@
+/* ==========================================
+   Workspace View
+========================================== */
+
+#workspace-view {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  gap: 20px;
+}
+
+/* ==========================================
+     Header
+  ========================================== */
+
+.workspace-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 24px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+
+  background: var(--color-surface);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  flex-shrink: 0;
+}
+
+.workspace-title h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.workspace-title p {
+  margin-top: 6px;
+  color: var(--color-text-secondary, #777);
+}
+
+.workspace-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ==========================================
+     Body
+  ========================================== */
+
+.workspace-body {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: minmax(420px, 40%) minmax(0, 60%);
+
+  gap: 20px;
+
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+/* ==========================================
+     Question Panel
+  ========================================== */
+
+.question-panel {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  overflow-y: auto;
+
+  min-height: 0;
+
+  padding-right: 8px;
+
+  align-items: stretch;
+}
+
+/* ==========================================
+     Question Card
+  ========================================== */
+
+.question-card {
+  flex-shrink: 0;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+     Card Header
+  ========================================== */
+
+.card-header {
+  padding: 16px 20px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.card-header h3 {
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+/* ==========================================
+     Card Content
+  ========================================== */
+
+.card-content {
+  padding: 20px;
+
+  line-height: 1.7;
+}
+
+/* ==========================================
+     Question Text
+  ========================================== */
+
+#question-text {
+  margin: 0;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  white-space: pre-line;
+}
+
+/* ==========================================
+     Test Cases
+  ========================================== */
+
+#question-testcases {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* If UI creates .testcase */
+
+.testcase {
+  border: 1px solid var(--color-border);
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.testcase h4 {
+  margin: 0 0 12px;
+
+  font-size: 0.95rem;
+}
+
+.testcase pre {
+  margin: 8px 0 0;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  overflow: auto;
+
+  background: #111;
+
+  color: #fff;
+
+  font-family: Consolas, monospace;
+}
+
+/* ==========================================
+     Notes
+  ========================================== */
+
+#question-notes {
+  line-height: 1.7;
+}
+
+/* ==========================================
+     Editor
+  ========================================== */
+
+.editor-panel {
+  display: flex;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ==========================================
+     Editor Wrapper
+  ========================================== */
+
+.editor-wrapper {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: var(--color-surface);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+     Editor Toolbar
+  ========================================== */
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: #1e1e1e;
+
+  color: #fff;
+
+  font-size: 0.9rem;
+
+  flex-shrink: 0;
+}
+
+#editor-file-name {
+  font-weight: 600;
+}
+
+#editor-save-status {
+  opacity: 0.75;
+}
+
+/* ==========================================
+     Monaco Container
+  ========================================== */
+
+#editor-container {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================
+     Footer
+  ========================================== */
+
+.workspace-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 24px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  background: var(--color-surface);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  flex-shrink: 0;
+}
+
+/* ==========================================
+     Footer Buttons
+  ========================================== */
+
+.workspace-footer button,
+.workspace-actions button {
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.workspace-footer button:hover,
+.workspace-actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+     Scrollbars
+  ========================================== */
+
+.question-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.question-panel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background: rgba(120, 120, 120, 0.4);
+}
+
+/* ==========================================
+     Responsive
+  ========================================== */
+
+@media (max-width: 1100px) {
+  .workspace-body {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-panel {
+    min-height: 500px;
+  }
+}
+/* ==========================================
+   Toolbar Buttons
+========================================== */
+
+.toolbar-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.toolbar-button:hover {
+  transform: translateY(-2px);
+}
+
+.toolbar-button:active {
+  transform: scale(0.98);
+}
+
+/* History */
+
+.history-button {
+  background: linear-gradient(135deg, #64748b, #475569);
+}
+
+.history-button:hover {
+  background: linear-gradient(135deg, #718096, #4b5563);
+}
+
+/* Save */
+
+.save-button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #34d399, #22c55e);
+}
+#editor-save-status {
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+#editor-save-status.saved {
+  color: #22c55e;
+}
+
+#editor-save-status.unsaved {
+  color: #facc15;
+
+  animation: pulseUnsaved 1s infinite;
+}
+
+@keyframes pulseUnsaved {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

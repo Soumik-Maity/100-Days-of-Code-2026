@@ -1,0 +1,314 @@
+/* ==========================================
+   Root
+========================================== */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* ==========================================
+   Application
+========================================== */
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* ==========================================
+   Title Bar
+========================================== */
+
+#title-bar {
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  gap: 24px;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  flex: 1;
+}
+
+.app-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-sub-title {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.title-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================
+   Main Layout
+========================================== */
+
+#layout {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: 260px minmax(0, 1fr);
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  transition: grid-template-columns 0.25s ease;
+}
+
+/* ==========================================
+   Sidebar Collapsed
+========================================== */
+
+#layout.sidebar-collapsed {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+#sidebar {
+  overflow: hidden;
+
+  border-right: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  transition: width 0.25s ease;
+}
+
+/* ==========================================
+   Active View
+========================================== */
+
+#view-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  padding: 24px;
+}
+
+/* Every screen occupies full height */
+
+#welcome-view,
+#dashboard-view,
+#workspace-view,
+#revision-view {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ==========================================
+   Status Bar
+========================================== */
+
+#status-bar {
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0 16px;
+
+  flex-shrink: 0;
+
+  border-top: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  font-size: 13px;
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+button {
+  font: inherit;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   Scrollbars
+========================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.35);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.6);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ==========================================
+   Utility
+========================================== */
+
+[hidden] {
+  display: none !important;
+}
+#status-bar {
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+}
+
+#status-bar {
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  flex-shrink: 0;
+
+  border-top: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  font-size: 13px;
+}
+
+.status-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.status-right {
+  font-size: 12px;
+  opacity: 0.65;
+  font-weight: 500;
+}
+.app-main-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-sub-title {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ==========================================
+   Instructions Button
+========================================== */
+
+.title-button {
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.2s;
+}
+
+.title-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   Title Actions
+========================================== */
+
+.title-actions {
+  display: flex;
+  align-items: center;
+
+  padding-left: 20px;
+
+  border-left: 1px solid var(--color-border);
+}

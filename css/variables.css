@@ -1,0 +1,86 @@
+/* ==========================================
+   UPES 100 Days of Code
+   Design System
+   ========================================== */
+
+:root {
+  /* ========= Colors ========= */
+
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-hover: #2a2a2a;
+
+  --color-border: #334155;
+
+  --color-text: #ffffff;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #757575;
+
+  --color-primary: #4f8cff;
+  --color-primary-hover: #3a7af5;
+
+  --color-success: #3fb950;
+  --color-warning: #d29922;
+  --color-danger: #f85149;
+
+  /* ========= Typography ========= */
+
+  --font-family: "Inter", "Segoe UI", sans-serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========= Layout ========= */
+
+  --titlebar-height: 56px;
+  --statusbar-height: 32px;
+  --sidebar-width: 260px;
+
+  --content-padding: 24px;
+
+  /* ========= Border Radius ========= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* ========= Spacing ========= */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* ========= Animation ========= */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* ========= Shadows ========= */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+[data-theme="light"] {
+  --color-background: #f8fafc;
+
+  --color-surface: #ffffff;
+
+  --color-border: #dbe4ef;
+
+  --color-text: #111827;
+
+  --color-text-secondary: #4b5563;
+}

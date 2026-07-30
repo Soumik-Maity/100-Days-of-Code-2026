@@ -1,0 +1,97 @@
+/* ==========================================
+   Welcome View
+   ========================================== */
+
+#welcome-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: var(--space-8);
+}
+
+/* ==========================================
+   Welcome Card
+   ========================================== */
+
+.welcome-card {
+  width: 100%;
+  max-width: 560px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+
+  padding: 48px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+
+  text-align: center;
+}
+
+/* ==========================================
+   Heading
+   ========================================== */
+
+.welcome-card h2 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-text);
+}
+
+/* ==========================================
+   Description
+   ========================================== */
+
+.welcome-card p {
+  max-width: 420px;
+
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+.welcome-note {
+  font-size: var(--font-size-sm);
+
+  color: var(--color-text-muted);
+
+  margin-top: calc(var(--space-3) * -1);
+}
+
+/* ==========================================
+   Workspace Button
+   ========================================== */
+
+#workspace-button {
+  padding: 14px 28px;
+
+  background: var(--color-primary);
+  color: #ffffff;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+#workspace-button:hover {
+  background: var(--color-primary-hover);
+}
+
+#workspace-button:active {
+  transform: scale(0.98);
+}
