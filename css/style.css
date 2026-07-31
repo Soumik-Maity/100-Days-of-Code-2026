@@ -44,7 +44,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
   color: var(--color-text);
 }
 
@@ -88,6 +90,23 @@ button {
 
   transition: background var(--transition-fast), color var(--transition-fast),
     transform var(--transition-fast);
+}
+
+/* ==========================================
+      Inline Icons
+      ========================================== */
+
+.icon-svg {
+  width: 1.1em;
+  height: 1.1em;
+
+  flex-shrink: 0;
+
+  vertical-align: -0.15em;
+}
+
+h3 .icon-svg {
+  margin-right: 2px;
 }
 
 button:active {
@@ -145,7 +164,7 @@ img {
 
 ::selection {
   background: var(--color-primary);
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 /* ==========================================
@@ -180,7 +199,7 @@ img {
 
   cursor: pointer;
 
-  background: #3b82f6;
+  background: #c9915a;
 
   border-radius: 999px;
 
@@ -206,7 +225,7 @@ img {
 }
 
 .theme-switch input:checked + .theme-slider {
-  background: #64748b;
+  background: #5d4e44;
 }
 
 .theme-switch input:checked + .theme-slider::before {

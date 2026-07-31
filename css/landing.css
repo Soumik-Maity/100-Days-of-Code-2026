@@ -1,0 +1,509 @@
+/* ==========================================
+   Landing View
+   ========================================== */
+
+#landing-view {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #000000;
+}
+
+#landing-view[hidden] {
+  display: none !important;
+}
+
+/* ==========================================
+   Mesh Gradient Backdrop
+   (blurred, layered radial blobs standing in
+   for the paper-shaders mesh-gradient effect —
+   black / saddle-brown / white / dark browns)
+   ========================================== */
+
+.landing-gradient {
+  position: absolute;
+  inset: -15%;
+  z-index: 0;
+
+  width: 130%;
+  height: 130%;
+
+  background: #000000;
+
+  filter: blur(8px);
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Single large warm/cream mass spanning the frame, like the reference */
+.mesh-blob-1 {
+  width: 145vw;
+  height: 145vw;
+
+  top: -35vw;
+  left: -25vw;
+
+  border-radius: 42% 58% 55% 45% / 50% 45% 55% 50%;
+
+  background: radial-gradient(
+    circle at 55% 60%,
+    #e8c39e 0%,
+    #c9915a 22%,
+    #a0522d 38%,
+    #8b4513 52%,
+    #5d4037 64%,
+    #000000 76%
+  );
+
+  animation: mesh-swirl-1 20s ease-in-out infinite;
+}
+
+/* Sharp dark wedge biting into the mass to create the visible S-curve edge */
+.mesh-blob-3 {
+  width: 90vw;
+  height: 120vh;
+
+  top: -10vh;
+  left: -30vw;
+
+  border-radius: 40% 60% 65% 35% / 55% 40% 60% 45%;
+
+  background: #000000;
+
+  animation: mesh-swirl-3 24s ease-in-out infinite;
+}
+
+.mesh-blob-2 {
+  width: 55vw;
+  height: 55vw;
+
+  bottom: -20vw;
+  right: -15vw;
+
+  background: radial-gradient(
+    circle,
+    #5d4037 0%,
+    #3e2723 45%,
+    transparent 70%
+  );
+
+  animation: mesh-swirl-2 22s ease-in-out infinite;
+}
+
+.mesh-blob-4 {
+  width: 35vw;
+  height: 35vw;
+
+  top: 10vh;
+  right: 5vw;
+
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 65%);
+  mix-blend-mode: overlay;
+
+  animation: mesh-swirl-4 16s ease-in-out infinite;
+}
+
+@keyframes mesh-swirl-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5vw, 6vh) scale(1.1);
+  }
+}
+
+@keyframes mesh-swirl-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-6vw, 5vh) scale(1.08);
+  }
+}
+
+@keyframes mesh-swirl-3 {
+  0% {
+    transform: rotate(-8deg) translate(0, 0) scaleX(1);
+  }
+  50% {
+    transform: rotate(6deg) translate(3vw, -2vh) scaleX(1.08);
+  }
+  100% {
+    transform: rotate(-8deg) translate(0, 0) scaleX(1);
+  }
+}
+
+@keyframes mesh-swirl-4 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4vw, -6vh) scale(1.15);
+  }
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+
+.landing-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--space-6) var(--space-8);
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  flex: 1;
+}
+
+.landing-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.landing-nav a {
+  padding: 8px 14px;
+
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.landing-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.landing-start-pill {
+  padding: 8px 24px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.landing-start-pill:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   Hero Content (bottom-left anchored)
+   ========================================== */
+
+.landing-hero {
+  position: absolute;
+  z-index: 2;
+
+  left: var(--space-8);
+  bottom: var(--space-8);
+
+  max-width: 560px;
+
+  text-align: left;
+}
+
+.landing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  padding: 6px 14px;
+  margin-bottom: var(--space-4);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.landing-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+
+  margin-bottom: var(--space-4);
+}
+
+.landing-title .highlight {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-hover, #d2a679);
+}
+
+.landing-title-sub {
+  font-weight: var(--font-weight-regular);
+  color: #ffffff;
+}
+
+.landing-subtitle {
+  max-width: 460px;
+
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  margin-bottom: var(--space-5);
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+
+.landing-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.landing-secondary-button {
+  padding: 12px 28px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: var(--font-size-xs);
+
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.landing-secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.landing-primary-button {
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.landing-primary-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   Pulsing Circle (bottom-right)
+   ========================================== */
+
+.landing-pulsing-circle {
+  position: absolute;
+  z-index: 2;
+
+  right: var(--space-8);
+  bottom: var(--space-8);
+
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulsing-ring {
+  position: absolute;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(20, 20, 20, 0.6) 55%,
+    rgba(20, 20, 20, 0.15) 70%,
+    transparent 78%
+  );
+
+  filter: blur(0.4px);
+
+  animation: pulsing-ring-pulse 2.4s ease-in-out infinite;
+}
+
+.pulsing-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from 0deg,
+    #beecff 0deg 22deg,
+    transparent 22deg 40deg,
+    #e77edc 40deg 62deg,
+    transparent 62deg 80deg,
+    #ff4c3e 80deg 102deg,
+    transparent 102deg 120deg,
+    #00ff88 120deg 142deg,
+    transparent 142deg 160deg,
+    #ffd700 160deg 182deg,
+    transparent 182deg 200deg,
+    #ff6b35 200deg 222deg,
+    transparent 222deg 240deg,
+    #8a2be2 240deg 262deg,
+    transparent 262deg 280deg,
+    #beecff 280deg 302deg,
+    transparent 302deg 360deg
+  );
+
+  filter: blur(4px) saturate(1.6) brightness(1.3);
+
+  -webkit-mask: radial-gradient(
+    circle,
+    transparent 55%,
+    #fff 64%,
+    #fff 86%,
+    transparent 92%
+  );
+  mask: radial-gradient(
+    circle,
+    transparent 55%,
+    #fff 64%,
+    #fff 86%,
+    transparent 92%
+  );
+
+  animation: pulsing-ring-spin 6s linear infinite;
+}
+
+.pulsing-ring::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(190, 236, 255, 0.25),
+    transparent 70%
+  );
+
+  filter: blur(6px);
+
+  animation: pulsing-ring-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulsing-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulsing-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.pulsing-orbit-text {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1.35);
+
+  animation: pulsing-orbit-spin 20s linear infinite;
+}
+
+.pulsing-orbit-text text {
+  font-size: 6.5px;
+  letter-spacing: 0.02em;
+  fill: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes pulsing-orbit-spin {
+  to {
+    transform: scale(1.35) rotate(360deg);
+  }
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 640px) {
+  .landing-nav {
+    display: none;
+  }
+
+  .landing-pulsing-circle {
+    display: none;
+  }
+
+  .landing-hero {
+    left: var(--space-5);
+    right: var(--space-5);
+    bottom: var(--space-5);
+  }
+}

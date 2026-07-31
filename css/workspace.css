@@ -23,14 +23,11 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 18px 24px;
+  padding: 0 0 18px;
 
-  border: 1px solid var(--color-border);
-  border-radius: 18px;
+  border-bottom: 1px solid var(--color-border);
 
-  background: var(--color-surface);
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  background: transparent;
 
   flex-shrink: 0;
 }
@@ -47,7 +44,44 @@
 
 .workspace-actions {
   display: flex;
+  align-items: center;
   gap: 12px;
+}
+
+/* ==========================================
+     Meta Pills (timer / last saved)
+  ========================================== */
+
+.workspace-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+
+  color: var(--color-text-secondary);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.workspace-meta-pill .icon-svg {
+  color: var(--color-text-muted);
+}
+
+#session-timer-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+#last-saved.stale .icon-svg,
+#last-saved.stale #last-saved-value {
+  color: var(--color-warning);
 }
 
 /* ==========================================
@@ -94,21 +128,18 @@
 .question-card {
   flex-shrink: 0;
 
-  background: var(--color-surface);
+  background: transparent;
 
-  border: 1px solid var(--color-border);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
 
-  border-radius: 18px;
+  border-radius: 0;
 
   overflow: hidden;
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 
-.question-card:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+.question-card:last-child {
+  border-bottom: none;
 }
 
 /* ==========================================
@@ -116,19 +147,23 @@
   ========================================== */
 
 .card-header {
-  padding: 16px 20px;
+  padding: 16px 0;
 
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
 
-  background: rgba(59, 130, 246, 0.06);
+  background: transparent;
 }
 
 .card-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   margin: 0;
 
   font-size: 1rem;
 
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ==========================================
@@ -136,7 +171,7 @@
   ========================================== */
 
 .card-content {
-  padding: 20px;
+  padding: 0 0 16px;
 
   line-height: 1.7;
 }
@@ -175,7 +210,7 @@
 
   padding: 16px;
 
-  background: rgba(0, 0, 0, 0.02);
+  background: var(--color-surface-hover);
 }
 
 .testcase h4 {
@@ -234,13 +269,11 @@
 
   border: 1px solid var(--color-border);
 
-  border-radius: 18px;
+  border-radius: 14px;
 
   overflow: hidden;
 
   background: var(--color-surface);
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 /* ==========================================
@@ -296,15 +329,14 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 18px 24px;
+  padding: 18px 0 0;
 
-  border: 1px solid var(--color-border);
+  border: none;
+  border-top: 1px solid var(--color-border);
 
-  border-radius: 18px;
+  border-radius: 0;
 
-  background: var(--color-surface);
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  background: transparent;
 
   flex-shrink: 0;
 }
@@ -315,22 +347,32 @@
 
 .workspace-footer button,
 .workspace-actions button {
-  padding: 10px 18px;
+  padding: 10px 22px;
 
-  border: none;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
 
-  border-radius: 10px;
+  background: transparent;
+  color: var(--color-text);
 
   cursor: pointer;
 
-  font-weight: 600;
+  font-weight: 500;
 
   transition: 0.2s;
 }
 
 .workspace-footer button:hover,
 .workspace-actions button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+}
+
+.workspace-footer button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ==========================================
@@ -371,15 +413,17 @@
 
   gap: 8px;
 
-  padding: 10px 18px;
+  padding: 10px 20px;
 
-  border-radius: 10px;
+  border-radius: 999px;
 
-  border: none;
+  border: 1px solid var(--color-border);
 
-  color: white;
+  background: transparent;
 
-  font-weight: 600;
+  color: var(--color-text);
+
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -387,7 +431,8 @@
 }
 
 .toolbar-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
 }
 
 .toolbar-button:active {
@@ -396,22 +441,20 @@
 
 /* History */
 
-.history-button {
-  background: linear-gradient(135deg, #64748b, #475569);
-}
-
 .history-button:hover {
-  background: linear-gradient(135deg, #718096, #4b5563);
+  color: var(--color-primary-hover);
 }
 
 /* Save */
 
 .save-button {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: var(--color-success);
+  color: var(--color-success);
 }
 
 .save-button:hover {
-  background: linear-gradient(135deg, #34d399, #22c55e);
+  background: var(--color-success);
+  color: #0a0a0a;
 }
 #editor-save-status {
   font-weight: 700;
@@ -420,11 +463,11 @@
 }
 
 #editor-save-status.saved {
-  color: #22c55e;
+  color: #7fb069;
 }
 
 #editor-save-status.unsaved {
-  color: #facc15;
+  color: #d2a679;
 
   animation: pulseUnsaved 1s infinite;
 }

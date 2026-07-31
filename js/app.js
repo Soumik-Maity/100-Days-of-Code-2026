@@ -15,6 +15,7 @@ import HistoryManager from "./history/history.js";
 import ProgressManager from "./dashboard/progress.js";
 import ThemeManager from "./theme/theme.js";
 import InstructionsManager from "./instructions/instructions.js";
+import LandingManager from "./landing/landing.js";
 
 class App {
   constructor() {
@@ -23,12 +24,16 @@ class App {
 
     // Buttons
     this.workspaceButton = document.getElementById("workspace-button");
+    this.changeWorkspaceButton = document.getElementById(
+      "change-workspace-button"
+    );
     this.previousButton = document.getElementById("previous-question");
     this.nextButton = document.getElementById("next-question");
     this.saveButton = document.getElementById("save-button");
 
     // Views
-    this.welcomeView = document.getElementById("welcome-view");
+    this.welcomeOverlay = document.getElementById("welcome-overlay");
+    this.appShell = document.getElementById("app-shell");
     this.dashboardView = document.getElementById("dashboard-view");
     this.workspaceView = document.getElementById("workspace-view");
 
@@ -46,17 +51,35 @@ class App {
     //Instruction
     this.instructionsButton = document.getElementById("instructions-button");
 
+    // Session Timer / Last Saved
+    this.sessionTimerValue = document.getElementById("session-timer-value");
+    this.lastSavedElement = document.getElementById("last-saved");
+    this.lastSavedValue = document.getElementById("last-saved-value");
+    this.sessionTimerInterval = null;
+    this.sessionStartedAt = null;
+    this.lastSavedAt = null;
+
     this.registerEvents();
     ThemeManager.initialize();
-    this.initialize();
+    LandingManager.initialize(() => this.initialize());
   }
 
   /**
    * Initialize application.
    */
   async initialize() {
+    this.appShell.classList.add("app-shell-blurred");
+
     try {
       await QuestionsManager.load();
+
+      const restored = await WorkspaceManager.restoreWorkspace();
+
+      if (restored) {
+        await this.enterPlatform();
+        return;
+      }
+
       const calendar = Calendar.getStatus();
 
       if (!calendar.started) {
@@ -137,6 +160,10 @@ class App {
       this.selectWorkspace()
     );
 
+    this.changeWorkspaceButton.addEventListener("click", () =>
+      this.changeWorkspace()
+    );
+
     this.previousButton.addEventListener("click", () =>
       this.openPreviousQuestion()
     );
@@ -188,7 +215,16 @@ class App {
       return;
     }
 
-    this.welcomeView.hidden = true;
+    await this.enterPlatform();
+  }
+
+  /**
+   * Reveal the platform behind the mandatory workspace overlay,
+   * whether the workspace was just chosen or silently restored.
+   */
+  async enterPlatform() {
+    this.welcomeOverlay.hidden = true;
+    this.appShell.classList.remove("app-shell-blurred");
     this.dashboardView.hidden = false;
     document
       .querySelectorAll(".nav-item")
@@ -209,6 +245,88 @@ class App {
       StatusBar.setSaveStatus("Course starts on 10 Aug 2026");
     }
     StatusBar.setSaveStatus("Workspace Ready");
+  }
+
+  /**
+   * Forget the current workspace and prompt the user to pick a new one.
+   */
+  async changeWorkspace() {
+    await WorkspaceManager.clearWorkspace();
+
+    this.currentQuestionId = null;
+
+    this.workspaceView.hidden = true;
+    this.dashboardView.hidden = true;
+    document.getElementById("revision-view").hidden = true;
+    document.getElementById("layout").classList.remove("sidebar-collapsed");
+
+    this.appShell.classList.add("app-shell-blurred");
+    this.welcomeOverlay.hidden = false;
+
+    StatusBar.setSaveStatus("Workspace Not Selected");
+  }
+
+  /**
+   * Start (or restart) the session timer for the current question.
+   */
+  startSessionTimer() {
+    clearInterval(this.sessionTimerInterval);
+
+    this.sessionStartedAt = Date.now();
+    this.sessionTimerValue.textContent = "00:00";
+
+    this.sessionTimerInterval = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - this.sessionStartedAt) / 1000);
+
+      const minutes = String(Math.floor(elapsed / 60)).padStart(2, "0");
+      const seconds = String(elapsed % 60).padStart(2, "0");
+
+      this.sessionTimerValue.textContent = `${minutes}:${seconds}`;
+    }, 1000);
+  }
+
+  /**
+   * Update the "Last Saved" indicator and start its relative-time ticker.
+   *
+   * @param {Date} [savedAt]
+   */
+  setLastSaved(savedAt = new Date()) {
+    this.lastSavedAt = savedAt;
+    this.lastSavedElement.classList.remove("stale");
+
+    clearInterval(this.lastSavedInterval);
+
+    this.updateLastSavedLabel();
+
+    this.lastSavedInterval = setInterval(() => this.updateLastSavedLabel(), 1000);
+  }
+
+  /**
+   * Render the relative "Last Saved" time (e.g. "Saved 2m ago").
+   */
+  updateLastSavedLabel() {
+    if (!this.lastSavedAt) {
+      this.lastSavedValue.textContent = "Not saved yet";
+      return;
+    }
+
+    const elapsedSeconds = Math.floor((Date.now() - this.lastSavedAt) / 1000);
+
+    if (elapsedSeconds < 5) {
+      this.lastSavedValue.textContent = "Saved just now";
+    } else if (elapsedSeconds < 60) {
+      this.lastSavedValue.textContent = `Saved ${elapsedSeconds}s ago`;
+    } else if (elapsedSeconds < 3600) {
+      this.lastSavedValue.textContent = `Saved ${Math.floor(
+        elapsedSeconds / 60
+      )}m ago`;
+    } else {
+      this.lastSavedValue.textContent = `Saved ${Math.floor(
+        elapsedSeconds / 3600
+      )}h ago`;
+    }
+
+    this.lastSavedElement.classList.toggle("stale", elapsedSeconds > 300);
   }
 
   /**
@@ -240,6 +358,8 @@ class App {
     this.workspaceView.hidden = false;
     document.getElementById("layout").classList.add("sidebar-collapsed");
     Workspace.showQuestion(question);
+
+    this.startSessionTimer();
 
     if (!EditorManager.editor) {
       EditorManager.initialize();
@@ -287,6 +407,21 @@ class App {
     document.getElementById("editor-file-name").textContent = `Q${String(
       question.id
     ).padStart(3, "0")}.c`;
+
+    const lastModified = await WorkspaceManager.getSolutionLastModified(
+      day,
+      question.id
+    );
+
+    if (lastModified) {
+      this.setLastSaved(new Date(lastModified));
+    } else {
+      clearInterval(this.lastSavedInterval);
+
+      this.lastSavedAt = null;
+      this.lastSavedElement.classList.remove("stale");
+      this.updateLastSavedLabel();
+    }
   }
   /**
    * Save current solution.
@@ -318,6 +453,8 @@ class App {
       StatusBar.setSaveStatus("Saved");
 
       document.getElementById("editor-save-status").textContent = "Saved";
+
+      this.setLastSaved();
     } catch (error) {
       console.error(error);
 

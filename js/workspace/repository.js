@@ -128,6 +128,31 @@ class WorkspaceRepository {
     }
   }
 
+  /**
+   * Returns the last-modified timestamp of a saved solution file, if any.
+   *
+   * @param {FileSystemDirectoryHandle} workspaceHandle
+   * @param {number} day
+   * @param {number} questionId
+   * @returns {Promise<number|null>}
+   */
+  async getSolutionLastModified(workspaceHandle, day, questionId) {
+    try {
+      const fileHandle = await this.getSolutionFile(
+        workspaceHandle,
+        day,
+        questionId,
+        false
+      );
+
+      const file = await fileHandle.getFile();
+
+      return file.size > 0 ? file.lastModified : null;
+    } catch {
+      return null;
+    }
+  }
+
   // ==========================================
   // Progress
   // ==========================================

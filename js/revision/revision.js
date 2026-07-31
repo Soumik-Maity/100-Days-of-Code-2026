@@ -62,22 +62,22 @@ class RevisionManager {
       row.className = "revision-row";
 
       row.innerHTML = `
-        <div>
+        <div class="revision-day">
           Day ${question.day}
         </div>
 
-        <div>
+        <div class="revision-topic">
           ${question.section}
         </div>
 
         <div class="revision-question">
-          <strong>Question ${question.id}</strong><br>
-          ${question.text}
+          <strong>Question ${question.id}</strong>
+          <span>${question.text}</span>
         </div>
 
         <div>
           <span class="revision-status ${solved ? "solved" : "pending"}">
-            ${solved ? "✔ Solved" : "○ Not Started"}
+            ${solved ? "Solved" : "Not Started"}
           </span>
         </div>
 
