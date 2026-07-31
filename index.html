@@ -6,6 +6,14 @@
 
     <title>UPES 100 Days of Code</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -17,16 +25,88 @@
     <link rel="stylesheet" href="css/welcome.css" />
     <link rel="stylesheet" href="css/history.css" />
     <link rel="stylesheet" href="css/instructions.css" />
+    <link rel="stylesheet" href="css/landing.css" />
   </head>
 
   <body>
-    <div id="app">
+    <!-- ==========================================
+         Landing Page
+    =========================================== -->
+    <section id="landing-view">
+      <div class="landing-gradient">
+        <span class="mesh-blob mesh-blob-1"></span>
+        <span class="mesh-blob mesh-blob-2"></span>
+        <span class="mesh-blob mesh-blob-3"></span>
+        <span class="mesh-blob mesh-blob-4"></span>
+      </div>
+
+      <header class="landing-header">
+        <div class="landing-brand">
+          <img src="assets/upes.jpg" alt="UPES" class="landing-logo" />
+        </div>
+
+        <nav class="landing-nav">
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Docs</a>
+        </nav>
+
+        <button id="start-button" class="landing-start-pill" type="button">
+          Start
+        </button>
+      </header>
+
+      <main class="landing-hero">
+        <div class="landing-badge">✨ New Coding Practice Experience</div>
+
+        <h1 class="landing-title">
+          <span class="highlight">100 Days</span> of Code
+          <br />
+          <span class="landing-title-sub">Practice Platform</span>
+        </h1>
+
+        <p class="landing-subtitle">
+          Build real programming discipline with daily questions, an
+          in-browser workspace, and progress tracking that keeps you
+          accountable — all stored locally on your computer.
+        </p>
+
+        <div class="landing-actions">
+          <button type="button" class="landing-secondary-button">
+            Instructions
+          </button>
+          <button id="start-button-main" class="landing-primary-button" type="button">
+            Get Started
+          </button>
+        </div>
+      </main>
+
+      <div class="landing-pulsing-circle">
+        <div class="pulsing-ring"></div>
+        <svg class="pulsing-orbit-text" viewBox="0 0 100 100">
+          <defs>
+            <path
+              id="orbit-circle"
+              d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+            />
+          </defs>
+          <text>
+            <textPath href="#orbit-circle" startOffset="0%">
+              100 Days of Code • 100 Days of Code • 100 Days of Code •
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </section>
+
+    <div id="app" hidden>
+      <div id="app-shell">
       <!-- ==========================================
            Title Bar
       =========================================== -->
       <header id="title-bar">
         <div class="app-brand">
-          <img src="assets/logo.png" alt="UPES" class="app-logo" />
+          <img src="assets/upes.jpg" alt="UPES" class="app-logo" />
 
           <div class="app-title">
             <div class="app-main-title">100 Days of Code</div>
@@ -36,8 +116,13 @@
         </div>
 
         <div class="title-actions">
+          <button id="change-workspace-button" class="title-button">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H9l2 2h8.5A1.5 1.5 0 0 1 21 9.5v8A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5Z"/><path d="M13.5 13.5 15 12l1.5 1.5M15 12v4"/></svg>
+            Change Workspace
+          </button>
           <button id="instructions-button" class="title-button">
-            📖 Instructions
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2-1 5-1 8 0 3-1 6-1 8 0v13c-2-1-5-1-8 0-3-1-6-1-8 0z"/><path d="M12 5.5v13"/></svg>
+            Instructions
           </button>
           <label class="theme-switch">
             <input type="checkbox" id="theme-toggle" />
@@ -58,17 +143,23 @@
               id="dashboard-nav"
               title="Dashboard"
             >
-              <span class="icon">🏠</span>
+              <span class="icon">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+              </span>
               <span class="label">Dashboard</span>
             </button>
 
             <button class="nav-item" id="workspace-nav" title="Workspace">
-              <span class="icon">💻</span>
+              <span class="icon">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 17v3"/></svg>
+              </span>
               <span class="label">Coding Workspace</span>
             </button>
 
             <button class="nav-item" id="revision-nav" title="Revision">
-              <span class="icon">📚</span>
+              <span class="icon">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13l-3-2-3 2-3-2-3 2V7A2.5 2.5 0 0 1 5 4.5Z"/><path d="M8.5 9h6M8.5 12h6"/></svg>
+              </span>
               <span class="label">Revision</span>
             </button>
           </nav>
@@ -79,30 +170,13 @@
         =========================================== -->
         <main id="view-container">
           <!-- ======================================
-               Welcome
-          ======================================= -->
-          <section id="welcome-view">
-            <div class="welcome-card">
-              <h2>UPES 100 Days of Code</h2>
-
-              <p>Select a location to create your coding workspace.</p>
-
-              <p class="welcome-note">
-                Your code will be stored locally on your computer.
-              </p>
-
-              <button id="workspace-button">Choose Workspace</button>
-            </div>
-          </section>
-
-          <!-- ======================================
                Dashboard
           ======================================= -->
           <section id="dashboard-view" hidden>
             <!-- Welcome Banner -->
             <div class="dashboard-hero">
               <div class="dashboard-hero-content">
-                <h1>👋 Welcome to UPES 100 Days of Code</h1>
+                <h1>Welcome to UPES 100 Days of Code</h1>
 
                 <h2 id="current-day">Day 1</h2>
 
@@ -145,15 +219,27 @@
               </div>
 
               <div class="workspace-actions">
+                <div class="workspace-meta-pill" id="session-timer" title="Time spent on this question">
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9.5 3h5"/></svg>
+                  <span id="session-timer-value">00:00</span>
+                </div>
+
+                <div class="workspace-meta-pill" id="last-saved" title="When this solution was last saved">
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v6h8V4"/></svg>
+                  <span id="last-saved-value">Not saved yet</span>
+                </div>
+
                 <button
                   id="history-button"
                   class="toolbar-button history-button"
                 >
-                  🕘 History
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/><path d="M12 8v4l3 2"/></svg>
+                  History
                 </button>
 
                 <button id="save-button" class="toolbar-button save-button">
-                  💾 Save
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v6h8V4M8 20v-6h8v6"/></svg>
+                  Save
                 </button>
               </div>
             </header>
@@ -165,7 +251,7 @@
                 <!-- Problem -->
                 <section class="question-card">
                   <div class="card-header">
-                    <h3>📄 Problem</h3>
+                    <h3><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h7l3 3v14H7z"/><path d="M14 3.5v3h3M9.5 12h5M9.5 15.5h5"/></svg> Problem</h3>
                   </div>
 
                   <div class="card-content">
@@ -176,7 +262,7 @@
                 <!-- Test Cases -->
                 <section class="question-card">
                   <div class="card-header">
-                    <h3>🧪 Test Cases</h3>
+                    <h3><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 8.5a2 2 0 0 0 1.7 3H17.3a2 2 0 0 0 1.7-3L14 9V3"/><path d="M8 15h8"/></svg> Test Cases</h3>
                   </div>
 
                   <div class="card-content" id="question-testcases"></div>
@@ -185,7 +271,7 @@
                 <!-- Notes -->
                 <section class="question-card" id="notes-section" hidden>
                   <div class="card-header">
-                    <h3>💡 Notes</h3>
+                    <h3><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/></svg> Notes</h3>
                   </div>
 
                   <div class="card-content" id="question-notes"></div>
@@ -220,6 +306,9 @@
           <section id="revision-view" hidden>
             <div class="revision-header">
               <h2>Revision</h2>
+              <p class="revision-subtitle">
+                Revisit earlier questions and strengthen weaker topics.
+              </p>
             </div>
 
             <div id="revision-list"></div>
@@ -245,6 +334,23 @@
           © Soumik Maity
         </div>
       </footer>
+      </div>
+      <!-- ==========================================
+           Mandatory Workspace Selection
+      =========================================== -->
+      <div id="welcome-overlay">
+        <div class="welcome-card">
+          <h2>UPES 100 Days of Code</h2>
+
+          <p>Select a location to create your coding workspace.</p>
+
+          <p class="welcome-note">
+            Your code will be stored locally on your computer.
+          </p>
+
+          <button id="workspace-button" type="button">Choose Workspace</button>
+        </div>
+      </div>
     <!-- ==========================================
      History Modal
 ========================================== -->

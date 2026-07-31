@@ -1,16 +1,34 @@
 /* ==========================================
-   Welcome View
+   Mandatory Workspace Overlay
+   (blocks interaction with the app until a
+   workspace is chosen — no dismiss affordance)
    ========================================== */
 
-#welcome-view {
+#welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
-
   padding: var(--space-8);
+
+  background: rgba(10, 10, 10, 0.55);
+}
+
+#welcome-overlay[hidden] {
+  display: none !important;
+}
+
+/* Blurred app shell behind the overlay */
+
+#app-shell.app-shell-blurred {
+  filter: blur(10px) brightness(0.7);
+  pointer-events: none;
+
+  transition: filter var(--transition-normal);
 }
 
 /* ==========================================
@@ -19,7 +37,7 @@
 
 .welcome-card {
   width: 100%;
-  max-width: 560px;
+  max-width: 480px;
 
   display: flex;
   flex-direction: column;
@@ -32,9 +50,23 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 
   text-align: center;
+
+  animation: welcomeCardIn 0.35s ease;
+}
+
+@keyframes welcomeCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ==========================================
@@ -71,16 +103,16 @@
    ========================================== */
 
 #workspace-button {
-  padding: 14px 28px;
+  padding: 14px 32px;
 
   background: var(--color-primary);
-  color: #ffffff;
+  color: #0a0a0a;
 
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 999px;
 
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
 
   cursor: pointer;
 
@@ -90,6 +122,7 @@
 
 #workspace-button:hover {
   background: var(--color-primary-hover);
+  transform: translateY(-1px);
 }
 
 #workspace-button:active {

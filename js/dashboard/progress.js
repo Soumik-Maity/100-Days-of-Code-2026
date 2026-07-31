@@ -39,21 +39,21 @@ class ProgressManager {
       <div class="progress-grid">
 
         <div class="progress-card">
-          <div class="progress-title">🔥 Current Streak</div>
+          <div class="progress-title"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4 0 7-2.5 7-6.5C19 10 15 8 15 4c-2 1.5-3 4-3 6-2-1-3-3-3-5-3 2-4 5-4 9.5C5 18.5 8 21 12 21Z"/></svg> Current Streak</div>
           <div class="progress-value">${currentStreak} Day${
       currentStreak !== 1 ? "s" : ""
     }</div>
         </div>
 
         <div class="progress-card">
-          <div class="progress-title">🏆 Longest Streak</div>
+          <div class="progress-title"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 13v3m-3 4h6m-3-4v4"/></svg> Longest Streak</div>
           <div class="progress-value">${longestStreak} Day${
       longestStreak !== 1 ? "s" : ""
     }</div>
         </div>
 
         <div class="progress-card">
-          <div class="progress-title">📈 Progress</div>
+          <div class="progress-title"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9m5 10V5m5 14v-7m5 7V4"/></svg> Progress</div>
 
           <div class="progress-value">
             ${solvedQuestions} / ${totalQuestions}

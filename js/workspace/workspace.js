@@ -5,6 +5,7 @@
 
 import WorkspaceRepository from "./repository.js";
 import WorkspaceValidator from "./validator.js";
+import HandleStore from "./handleStore.js";
 
 class WorkspaceManager {
   constructor() {
@@ -35,12 +36,61 @@ class WorkspaceManager {
 
       await WorkspaceValidator.ensureStructure(workspaceHandle);
 
+      await HandleStore.saveHandle(parentHandle);
+
       return true;
     } catch (error) {
       console.error("Workspace selection failed.", error);
 
       return false;
     }
+  }
+
+  /**
+   * Attempt to silently restore the previously selected workspace,
+   * reusing filesystem permission if the browser still grants it.
+   *
+   * @returns {Promise<boolean>}
+   */
+  async restoreWorkspace() {
+    try {
+      const parentHandle = await HandleStore.getHandle();
+
+      if (!parentHandle) {
+        return false;
+      }
+
+      const permission = await parentHandle.queryPermission({
+        mode: "readwrite",
+      });
+
+      if (permission !== "granted") {
+        return false;
+      }
+
+      const workspaceHandle = await WorkspaceRepository.openWorkspace(
+        parentHandle
+      );
+
+      this.workspaceHandle = workspaceHandle;
+
+      await WorkspaceValidator.ensureStructure(workspaceHandle);
+
+      return true;
+    } catch (error) {
+      console.error("Workspace restore failed.", error);
+
+      return false;
+    }
+  }
+
+  /**
+   * Forget the stored workspace so the user can pick a new one.
+   */
+  async clearWorkspace() {
+    this.workspaceHandle = null;
+
+    await HandleStore.clearHandle();
   }
 
   /**
@@ -179,6 +229,25 @@ class WorkspaceManager {
     }
 
     return await WorkspaceRepository.loadSolution(
+      this.workspaceHandle,
+      day,
+      questionId
+    );
+  }
+
+  /**
+   * Returns the last-modified timestamp of a saved solution, if any.
+   *
+   * @param {number} day
+   * @param {number} questionId
+   * @returns {Promise<number|null>}
+   */
+  async getSolutionLastModified(day, questionId) {
+    if (!this.workspaceHandle) {
+      return null;
+    }
+
+    return await WorkspaceRepository.getSolutionLastModified(
       this.workspaceHandle,
       day,
       questionId

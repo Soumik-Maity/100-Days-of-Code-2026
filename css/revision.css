@@ -14,13 +14,19 @@
   ========================================== */
 
 .revision-header {
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .revision-header h2 {
-  margin: 0;
+  margin: 0 0 4px;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.revision-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
 }
 
 /* ==========================================
@@ -30,7 +36,8 @@
 #revision-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+
+  margin-top: 20px;
 }
 
 /* ==========================================
@@ -38,35 +45,100 @@
   ========================================== */
 
 .revision-row {
+  position: relative;
+
   display: grid;
   grid-template-columns:
-    90px
-    260px
+    64px
+    220px
     1fr
-    140px
-    120px;
+    130px
+    110px;
 
   align-items: center;
 
-  gap: 16px;
+  gap: 20px;
 
-  padding: 14px 18px;
+  padding: 20px 20px 20px 24px;
 
-  border: 1px solid var(--border-color);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  background: var(--surface-color);
+  background: transparent;
+
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.revision-header.revision-row {
-  font-weight: 700;
+.revision-row::before {
+  content: "";
 
-  background: var(--surface-secondary);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+
+  width: 2px;
+  border-radius: 999px;
+
+  background: var(--color-primary);
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.revision-row:hover {
+  background: var(--color-surface-hover);
+}
+
+.revision-row:hover::before {
+  opacity: 0.7;
+}
+
+.revision-day {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.revision-topic {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Sticky column header */
+
+.revision-header.revision-row {
+  padding-top: 0;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+
+  background: var(--color-background);
 
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+.revision-header.revision-row:hover {
+  background: var(--color-background);
+}
+
+.revision-header.revision-row::before {
+  display: none;
+}
+
+.revision-header.revision-row > div {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 /* ==========================================
@@ -74,12 +146,21 @@
   ========================================== */
 
 .revision-question {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .revision-question strong {
   display: block;
   margin-bottom: 4px;
+
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.revision-question span {
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
 }
 
 /* ==========================================
@@ -87,25 +168,47 @@
   ========================================== */
 
 .revision-status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-  padding: 6px 12px;
+  padding: 5px 12px 5px 10px;
 
   border-radius: 999px;
 
-  font-size: 13px;
+  font-size: 12.5px;
 
   font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.revision-status::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  flex-shrink: 0;
 }
 
 .revision-status.solved {
-  background: #dff6e5;
-  color: #1f7a3d;
+  background: rgba(127, 176, 105, 0.13);
+  color: var(--color-success);
+}
+
+.revision-status.solved::before {
+  background: var(--color-success);
 }
 
 .revision-status.pending {
-  background: #f2f2f2;
-  color: #666;
+  background: rgba(184, 173, 162, 0.1);
+  color: var(--color-text-muted);
+}
+
+.revision-status.pending::before {
+  background: var(--color-text-muted);
 }
 
 /* ==========================================
@@ -115,20 +218,29 @@
 .revision-open-button {
   width: 100%;
 
-  padding: 8px 14px;
+  padding: 9px 16px;
 
-  border: none;
+  border: 1px solid var(--color-border);
 
-  border-radius: 8px;
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--color-text);
 
   cursor: pointer;
 
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
 
-  transition: 0.2s;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease,
+    transform 0.15s ease;
 }
 
 .revision-open-button:hover {
+  border-color: var(--color-primary);
+  background: rgba(201, 145, 90, 0.08);
+  color: var(--color-primary-hover);
+
   transform: translateY(-1px);
 }
 
@@ -141,9 +253,23 @@
   ========================================== */
 
 .revision-empty {
-  padding: 40px;
+  padding: 60px 40px;
 
   text-align: center;
 
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================
+     Responsive
+  ========================================== */
+
+@media (max-width: 900px) {
+  .revision-row {
+    grid-template-columns: 50px 1fr 110px 100px;
+  }
+
+  .revision-topic {
+    display: none;
+  }
 }

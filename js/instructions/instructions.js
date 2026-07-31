@@ -43,7 +43,7 @@ class InstructionsManager {
 
     this.content.innerHTML = `
         <section class="instruction-section">
-          <h3>👋 Welcome</h3>
+          <h3>Welcome</h3>
           <p>
             Welcome to the <strong>UPES 100 Days of Code</strong> platform.
             This application is designed to help you build programming skills
@@ -53,7 +53,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>🚀 Getting Started</h3>
+          <h3>Getting Started</h3>
           <ul>
             <li>Select a workspace folder when you launch the application.</li>
             <li>This folder stores your code, history and progress.</li>
@@ -62,7 +62,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>💻 Coding Workspace</h3>
+          <h3>Coding Workspace</h3>
           <ul>
             <li>Each question includes a problem statement and sample test cases.</li>
             <li>Write your solution inside the editor provided.</li>
@@ -71,7 +71,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>💾 Saving Your Work</h3>
+          <h3>Saving Your Work</h3>
           <ul>
             <li>Every save updates your latest solution.</li>
             <li>A timestamped history snapshot is also created automatically.</li>
@@ -80,7 +80,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>📚 Revision</h3>
+          <h3>Revision</h3>
           <ul>
             <li>Questions from previous days remain available.</li>
             <li>If you miss a day's practice, complete it later from the Revision section.</li>
@@ -88,7 +88,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>📈 Progress Tracking</h3>
+          <h3>Progress Tracking</h3>
           <ul>
             <li>Dashboard displays your overall completion.</li>
             <li>Current and longest streaks are calculated automatically.</li>
@@ -97,7 +97,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>⌨️ Coding Policy</h3>
+          <h3>Coding Policy</h3>
           <ul>
             <li>Students are expected to type their own solutions.</li>
             <li>Clipboard paste inside the editor is disabled.</li>
@@ -106,7 +106,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>💡 Best Practices</h3>
+          <h3>Best Practices</h3>
           <ul>
             <li>Save frequently.</li>
             <li>Attempt every problem independently.</li>
@@ -116,7 +116,7 @@ class InstructionsManager {
         </section>
   
         <section class="instruction-section">
-          <h3>🎯 Goal</h3>
+          <h3>Goal</h3>
           <p>
             The objective of this platform is not merely to complete 100
             questions, but to develop consistency, logical thinking and
