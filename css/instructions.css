@@ -217,3 +217,13 @@
     padding: 16px;
   }
 }
+[data-theme="light"] .instructions-header {
+  background: linear-gradient(135deg, #f7ede3, #efe3d6);
+}
+[data-theme="light"] #instructions-close {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] #instructions-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

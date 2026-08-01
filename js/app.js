@@ -25,11 +25,14 @@ class App {
     // Buttons
     this.workspaceButton = document.getElementById("workspace-button");
     this.changeWorkspaceButton = document.getElementById(
-      "change-workspace-button"
+      "change-workspace-button",
     );
     this.previousButton = document.getElementById("previous-question");
     this.nextButton = document.getElementById("next-question");
     this.saveButton = document.getElementById("save-button");
+    this.resetButton = document.getElementById("reset-button");
+    this.fontIncreaseButton = document.getElementById("font-increase");
+    this.fontDecreaseButton = document.getElementById("font-decrease");
 
     // Views
     this.welcomeOverlay = document.getElementById("welcome-overlay");
@@ -103,7 +106,7 @@ class App {
       }
 
       const todaysQuestions = QuestionsManager.getTodaysQuestions(
-        this.currentDay
+        this.currentDay,
       );
 
       UIManager.setCurrentDay(this.currentDay);
@@ -113,7 +116,7 @@ class App {
       }
 
       UIManager.setTodayQuestions(todaysQuestions, (questionId) =>
-        this.openCodingWorkspace(questionId)
+        this.openCodingWorkspace(questionId),
       );
 
       StatusBar.setDay(this.currentDay);
@@ -157,15 +160,15 @@ class App {
     });
 
     this.workspaceButton.addEventListener("click", () =>
-      this.selectWorkspace()
+      this.selectWorkspace(),
     );
 
     this.changeWorkspaceButton.addEventListener("click", () =>
-      this.changeWorkspace()
+      this.changeWorkspace(),
     );
 
     this.previousButton.addEventListener("click", () =>
-      this.openPreviousQuestion()
+      this.openPreviousQuestion(),
     );
 
     this.nextButton.addEventListener("click", () => this.openNextQuestion());
@@ -200,6 +203,31 @@ class App {
 
     document.addEventListener("drop", (event) => {
       event.preventDefault();
+    });
+    // ==========================================
+    // Reset Editor
+    // ==========================================
+
+    this.resetButton.addEventListener("click", () => {
+      const confirmed = confirm(
+        "Reset the current solution to the default C template?\n\nThis will remove your current code.",
+      );
+
+      if (!confirmed) return;
+
+      EditorManager.resetEditor();
+    });
+
+    // ==========================================
+    // Font Controls
+    // ==========================================
+
+    this.fontIncreaseButton.addEventListener("click", () => {
+      EditorManager.increaseFont();
+    });
+
+    this.fontDecreaseButton.addEventListener("click", () => {
+      EditorManager.decreaseFont();
     });
   }
   /**
@@ -298,7 +326,10 @@ class App {
 
     this.updateLastSavedLabel();
 
-    this.lastSavedInterval = setInterval(() => this.updateLastSavedLabel(), 1000);
+    this.lastSavedInterval = setInterval(
+      () => this.updateLastSavedLabel(),
+      1000,
+    );
   }
 
   /**
@@ -318,11 +349,11 @@ class App {
       this.lastSavedValue.textContent = `Saved ${elapsedSeconds}s ago`;
     } else if (elapsedSeconds < 3600) {
       this.lastSavedValue.textContent = `Saved ${Math.floor(
-        elapsedSeconds / 60
+        elapsedSeconds / 60,
       )}m ago`;
     } else {
       this.lastSavedValue.textContent = `Saved ${Math.floor(
-        elapsedSeconds / 3600
+        elapsedSeconds / 3600,
       )}h ago`;
     }
 
@@ -405,12 +436,12 @@ class App {
     }
 
     document.getElementById("editor-file-name").textContent = `Q${String(
-      question.id
+      question.id,
     ).padStart(3, "0")}.c`;
 
     const lastModified = await WorkspaceManager.getSolutionLastModified(
       day,
-      question.id
+      question.id,
     );
 
     if (lastModified) {
@@ -469,7 +500,7 @@ class App {
    */
   openPreviousQuestion() {
     const question = QuestionsManager.getPreviousQuestion(
-      this.currentQuestionId
+      this.currentQuestionId,
     );
 
     if (!question) {
@@ -490,7 +521,7 @@ class App {
     }
 
     const lastUnlocked = QuestionsManager.getLastUnlockedQuestionId(
-      this.currentDay
+      this.currentDay,
     );
 
     if (question.id > lastUnlocked) {
@@ -569,7 +600,7 @@ class App {
     }
 
     UIManager.setTodayQuestions(todaysQuestions, progress, (questionId) =>
-      this.openCodingWorkspace(questionId)
+      this.openCodingWorkspace(questionId),
     );
     ProgressManager.render(progress);
     StatusBar.setDay(currentDay);
@@ -595,7 +626,7 @@ class App {
 
     document.getElementById("revision-nav").classList.add("active");
     RevisionManager.render(progress, (questionId) =>
-      this.openCodingWorkspace(questionId)
+      this.openCodingWorkspace(questionId),
     );
   }
   async openDashboard() {

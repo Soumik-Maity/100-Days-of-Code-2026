@@ -276,89 +276,53 @@
                Workspace
           ======================================= -->
             <section id="workspace-view" hidden>
-              <!-- Header -->
               <header class="workspace-header">
+                <!-- Left -->
                 <div class="workspace-title">
                   <h2 id="workspace-question-id">Question 1</h2>
-
                   <p id="workspace-question-meta"></p>
                 </div>
 
+                <!-- Center -->
+                <div class="workspace-info">
+                  <div class="workspace-info-card">
+                    <span class="info-label">⏱ Session</span>
+                    <span id="session-timer-value" class="info-value"
+                      >00:00</span
+                    >
+                  </div>
+
+                  <div id="last-saved" class="workspace-info-card">
+                    <span class="info-label">💾 Last Saved</span>
+                    <span id="last-saved-value" class="info-value"
+                      >Not saved yet</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Right -->
                 <div class="workspace-actions">
-                  <div
-                    class="workspace-meta-pill"
-                    id="session-timer"
-                    title="Time spent on this question"
-                  >
-                    <svg
-                      class="icon-svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="13" r="8" />
-                      <path d="M12 9v4l3 2M9.5 3h5" />
-                    </svg>
-                    <span id="session-timer-value">00:00</span>
-                  </div>
-
-                  <div
-                    class="workspace-meta-pill"
-                    id="last-saved"
-                    title="When this solution was last saved"
-                  >
-                    <svg
-                      class="icon-svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M5 4h11l3 3v13H5z" />
-                      <path d="M8 4v6h8V4" />
-                    </svg>
-                    <span id="last-saved-value">Not saved yet</span>
-                  </div>
-
                   <button
                     id="history-button"
                     class="toolbar-button history-button"
                   >
-                    <svg
-                      class="icon-svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M3 12a9 9 0 1 0 3-6.7" />
-                      <path d="M3 4v4h4" />
-                      <path d="M12 8v4l3 2" />
-                    </svg>
-                    History
+                    🕘 <span>History</span>
                   </button>
 
+                  <button id="reset-button" class="toolbar-button reset-button">
+                    🔄 <span>Reset</span>
+                  </button>
+
+                  <div class="font-controls">
+                    <button id="font-decrease">A−</button>
+
+                    <span id="editor-font-size">15</span>
+
+                    <button id="font-increase">A+</button>
+                  </div>
+
                   <button id="save-button" class="toolbar-button save-button">
-                    <svg
-                      class="icon-svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M5 4h11l3 3v13H5z" />
-                      <path d="M8 4v6h8V4M8 20v-6h8v6" />
-                    </svg>
-                    Save
+                    💾 <span>Save</span>
                   </button>
                 </div>
               </header>
