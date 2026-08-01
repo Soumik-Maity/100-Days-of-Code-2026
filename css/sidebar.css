@@ -46,7 +46,10 @@
 
   cursor: pointer;
 
-  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease,
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -97,7 +100,9 @@
   font-size: 15px;
   font-weight: 500;
 
-  transition: opacity 0.2s ease, width 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    width 0.2s ease;
 }
 
 /* ==========================================
@@ -160,4 +165,16 @@
 .nav-item:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+/* ==========================================
+   Light Theme Overrides
+========================================== */
+
+[data-theme="light"] .nav-item:hover {
+  background: rgba(201, 145, 90, 0.18);
+}
+
+[data-theme="light"] .nav-item.active {
+  background: rgba(201, 145, 90, 0.24);
+  color: var(--color-primary);
 }

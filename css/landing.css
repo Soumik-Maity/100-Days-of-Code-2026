@@ -89,12 +89,7 @@
   bottom: -20vw;
   right: -15vw;
 
-  background: radial-gradient(
-    circle,
-    #5d4037 0%,
-    #3e2723 45%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, #5d4037 0%, #3e2723 45%, transparent 70%);
 
   animation: mesh-swirl-2 22s ease-in-out infinite;
 }
@@ -106,7 +101,11 @@
   top: 10vh;
   right: 5vw;
 
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.35),
+    transparent 65%
+  );
   mix-blend-mode: overlay;
 
   animation: mesh-swirl-4 16s ease-in-out infinite;
@@ -199,7 +198,9 @@
 
   color: rgba(255, 255, 255, 0.8);
 
-  transition: background var(--transition-fast), color var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .landing-nav a:hover {
@@ -218,7 +219,9 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
 
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .landing-start-pill:hover {
@@ -288,7 +291,7 @@
   font-size: var(--font-size-xs);
   line-height: 1.7;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 
   margin-bottom: var(--space-5);
 }
@@ -315,7 +318,9 @@
 
   font-size: var(--font-size-xs);
 
-  transition: background var(--transition-fast), border-color var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .landing-secondary-button:hover {
@@ -334,7 +339,9 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
 
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .landing-primary-button:hover {
@@ -506,4 +513,17 @@
     right: var(--space-5);
     bottom: var(--space-5);
   }
+}
+.landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    transparent 100%
+  );
 }

@@ -1,7 +1,7 @@
 // ==========================================
 // Landing Manager
 // ==========================================
-
+import instructionsManager from "../instructions/instructions.js";
 class LandingManager {
   constructor() {
     this.landingView = document.getElementById("landing-view");
@@ -10,6 +10,9 @@ class LandingManager {
       document.getElementById("start-button"),
       document.getElementById("start-button-main"),
     ].filter(Boolean);
+    this.instructionsButton = document.querySelector(
+      ".landing-secondary-button",
+    );
   }
 
   /**
@@ -21,6 +24,10 @@ class LandingManager {
     this.startButtons.forEach((button) => {
       button.addEventListener("click", () => this.enter(onStart));
     });
+    this.instructionsButton?.addEventListener("click", () => {
+      instructionsManager.show();
+    });
+    console.log(this.instructionsButton);
   }
 
   /**

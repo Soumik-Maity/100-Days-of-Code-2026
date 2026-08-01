@@ -454,7 +454,7 @@
 
 .save-button:hover {
   background: var(--color-success);
-  color: #0a0a0a;
+  color: #0a0a0a !important;
 }
 #editor-save-status {
   font-weight: 700;
@@ -484,4 +484,15 @@
   100% {
     opacity: 1;
   }
+}
+/* ==========================================
+   Light Theme Overrides
+========================================== */
+
+[data-theme="light"] .workspace-footer button:hover,
+[data-theme="light"] .workspace-actions button:hover,
+[data-theme="light"] .toolbar-button:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
 }
