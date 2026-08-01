@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/history.css" />
     <link rel="stylesheet" href="css/instructions.css" />
     <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/features.css" />
   </head>
 
   <body>
@@ -46,9 +47,9 @@
         </div>
 
         <nav class="landing-nav">
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Docs</a>
+          <a href="#" id="features-button">Features</a>
+          <a href="#landing-pricing">Pricing</a>
+          <a href="#landing-docs">Docs</a>
         </nav>
 
         <button id="start-button" class="landing-start-pill" type="button">
@@ -494,6 +495,7 @@
         </div>
       </div>
     </div>
+    <!-- Instruction Modal -->
     <div id="instructions-overlay" hidden>
       <div id="instructions-modal">
         <div class="instructions-header">
@@ -505,6 +507,21 @@
         <div id="instructions-content">
           <!-- Your guide goes here -->
         </div>
+      </div>
+    </div>
+    <!-- ==========================================
+     Features Modal
+========================================== -->
+
+    <div id="features-overlay" hidden>
+      <div id="features-modal">
+        <div class="features-header">
+          <h2>✨ Platform Features</h2>
+
+          <button id="features-close">✕</button>
+        </div>
+
+        <div id="features-content"></div>
       </div>
     </div>
     <!-- Global Containers -->

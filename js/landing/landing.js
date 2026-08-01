@@ -2,6 +2,7 @@
 // Landing Manager
 // ==========================================
 import instructionsManager from "../instructions/instructions.js";
+import Features from "../features/features.js";
 class LandingManager {
   constructor() {
     this.landingView = document.getElementById("landing-view");
@@ -21,6 +22,7 @@ class LandingManager {
    * @param {Function} onStart Called after the landing page is dismissed.
    */
   initialize(onStart) {
+    Features.initialize();
     this.startButtons.forEach((button) => {
       button.addEventListener("click", () => this.enter(onStart));
     });

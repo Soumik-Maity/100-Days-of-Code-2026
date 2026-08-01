@@ -16,7 +16,7 @@ import ProgressManager from "./dashboard/progress.js";
 import ThemeManager from "./theme/theme.js";
 import InstructionsManager from "./instructions/instructions.js";
 import LandingManager from "./landing/landing.js";
-
+import Features from "./features/features.js";
 class App {
   constructor() {
     this.currentDay = Calendar.getCurrentDay();
@@ -64,6 +64,7 @@ class App {
 
     this.registerEvents();
     ThemeManager.initialize();
+    Features.initialize();
     LandingManager.initialize(() => this.initialize());
   }
 

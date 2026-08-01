@@ -1,0 +1,272 @@
+/* ==========================================
+   Features Modal
+========================================== */
+
+#features-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(225, 183, 183, 0.5) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  backdrop-filter: blur(4px);
+
+  z-index: 5000;
+}
+
+/* ==========================================
+     Modal
+========================================== */
+
+#features-modal {
+  width: min(980px, 94vw);
+  max-height: 88vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  animation: featuresOpen 0.25s ease;
+}
+
+@keyframes featuresOpen {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================
+     Header
+========================================== */
+
+.features-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 24px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: linear-gradient(135deg, #14334d, #10253a);
+
+  color: var(--color-text);
+}
+
+.features-header h2 {
+  margin: 0;
+
+  font-size: 1.4rem;
+
+  color: var(--color-text);
+}
+
+#features-close {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: var(--color-text);
+
+  font-size: 18px;
+
+  transition: 0.2s;
+}
+
+#features-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ==========================================
+     Content
+========================================== */
+
+#features-content {
+  overflow-y: auto;
+
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+/* ==========================================
+     Grid
+========================================== */
+
+.feature-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 18px;
+}
+
+/* ==========================================
+     Cards
+========================================== */
+
+.feature-card {
+  padding: 22px;
+
+  border-radius: 14px;
+
+  border: 1px solid var(--color-border);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition: 0.25s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  margin: 0 0 16px;
+
+  font-size: 1.05rem;
+
+  color: var(--color-primary-hover);
+}
+
+.feature-card ul {
+  margin: 0;
+  padding-left: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.feature-card li {
+  line-height: 1.6;
+}
+
+/* ==========================================
+     Upcoming
+========================================== */
+
+.feature-coming-soon {
+  border-color: #d4af37;
+
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.08),
+    rgba(212, 175, 55, 0.02)
+  );
+}
+
+.feature-coming-soon h3 {
+  color: #d4af37;
+}
+
+/* ==========================================
+     Footer
+========================================== */
+
+.feature-footer {
+  text-align: center;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.8;
+}
+
+.feature-copyright {
+  display: inline-block;
+
+  margin-top: 6px;
+
+  font-weight: 600;
+
+  opacity: 0.8;
+}
+
+/* ==========================================
+     Scrollbar
+========================================== */
+
+#features-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#features-content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background: rgba(120, 120, 120, 0.4);
+}
+
+#features-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.65);
+}
+
+/* ==========================================
+     Responsive
+========================================== */
+
+@media (max-width: 700px) {
+  #features-modal {
+    width: 96vw;
+    max-height: 94vh;
+  }
+
+  #features-content {
+    padding: 18px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+     Light Theme
+========================================== */
+
+[data-theme="light"] .features-header {
+  background: linear-gradient(135deg, #e9f3fb, #dcebf8);
+}
+
+[data-theme="light"] #features-close {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] #features-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .feature-card {
+  background: rgba(0, 0, 0, 0.015);
+}
