@@ -3,6 +3,7 @@
 // ==========================================
 import instructionsManager from "../instructions/instructions.js";
 import Features from "../features/features.js";
+import TutorialManager from "../tutorial/tutorial.js";
 class LandingManager {
   constructor() {
     this.landingView = document.getElementById("landing-view");
@@ -23,9 +24,14 @@ class LandingManager {
    */
   initialize(onStart) {
     Features.initialize();
+    TutorialManager.initialize();
     this.startButtons.forEach((button) => {
       button.addEventListener("click", () => this.enter(onStart));
     });
+    this.instructionsButton?.addEventListener("click", () => {
+      instructionsManager.show();
+    });
+
     this.instructionsButton?.addEventListener("click", () => {
       instructionsManager.show();
     });
