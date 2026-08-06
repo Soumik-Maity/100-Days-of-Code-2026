@@ -11,7 +11,37 @@
 
   min-height: 0;
 
-  gap: 20px;
+  gap: 14px;
+
+  --editor-font: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ==========================================
+     Editor Fullscreen
+  ========================================== */
+
+.editor-panel.is-fullscreen {
+  position: fixed;
+  inset: 16px;
+
+  z-index: 4000;
+
+  max-width: none;
+}
+
+.editor-panel.is-fullscreen .editor-wrapper {
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+}
+
+body.editor-fullscreen-active #workspace-body > *:not(.editor-panel.is-fullscreen) {
+  visibility: hidden;
+}
+
+body.editor-fullscreen-active #status-bar,
+body.editor-fullscreen-active .workspace-header,
+body.editor-fullscreen-active .workspace-footer {
+  visibility: hidden;
 }
 
 /* ==========================================
@@ -23,7 +53,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 0 18px;
+  padding: 0 0 12px;
 
   border-bottom: 1px solid var(--color-border);
 
@@ -32,14 +62,57 @@
   flex-shrink: 0;
 }
 
+.workspace-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .workspace-title h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 .workspace-title p {
-  margin-top: 6px;
+  margin: 0;
   color: var(--color-text-secondary, #777);
+}
+
+.workspace-title p:empty {
+  display: none;
+}
+
+.workspace-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--color-text-secondary);
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition: 0.2s;
+}
+
+.workspace-back-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
+  transform: translateX(-2px);
+}
+
+.workspace-back-button .icon-svg {
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .workspace-actions {
@@ -50,37 +123,33 @@
 
 /* ==========================================
      Meta Pills (timer / last saved)
+     Live inside the editor toolbar
   ========================================== */
 
-.workspace-meta-pill {
+.meta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 
-  padding: 10px 16px;
+  color: #9b9b9b;
 
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-
-  color: var(--color-text-secondary);
-
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 500;
 
   white-space: nowrap;
 }
 
-.workspace-meta-pill .icon-svg {
-  color: var(--color-text-muted);
+.meta-pill .icon-svg {
+  width: 1em;
+  height: 1em;
 }
 
 #session-timer-value {
   font-variant-numeric: tabular-nums;
-  color: var(--color-text);
+  color: #d4d4d4;
 }
 
-#last-saved.stale .icon-svg,
-#last-saved.stale #last-saved-value {
+#last-saved.stale {
   color: var(--color-warning);
 }
 
@@ -91,15 +160,109 @@
 .workspace-body {
   flex: 1;
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns: minmax(420px, 40%) minmax(0, 60%);
-
-  gap: 20px;
+  gap: 0;
 
   min-height: 0;
 
   overflow: hidden;
+}
+
+.workspace-body .question-panel {
+  flex: 0 0 42%;
+
+  max-width: 70%;
+  min-width: 280px;
+}
+
+.workspace-body .editor-panel {
+  flex: 1;
+
+  min-width: 320px;
+}
+
+/* ==========================================
+     Resizer
+  ========================================== */
+
+.panel-resizer {
+  flex: 0 0 14px;
+
+  position: relative;
+
+  cursor: col-resize;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-resizer::before {
+  content: "";
+
+  width: 3px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  background: var(--color-border);
+
+  border-radius: 999px;
+
+  transition: background var(--transition-fast);
+}
+
+.panel-resizer::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 5px;
+  height: 34px;
+
+  border-radius: 999px;
+
+  background: var(--color-text-muted);
+
+  opacity: 0;
+
+  transition: opacity var(--transition-fast);
+}
+
+.panel-resizer:hover::before,
+.panel-resizer.resizing::before {
+  background: var(--color-primary);
+}
+
+.panel-resizer:hover::after,
+.panel-resizer.resizing::after {
+  opacity: 0.9;
+}
+
+.panel-resizer:focus-visible {
+  outline: none;
+}
+
+.panel-resizer:focus-visible::after {
+  opacity: 0.9;
+  background: var(--color-primary);
+}
+
+body.panel-resizing {
+  cursor: col-resize;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.panel-resizing .editor-wrapper,
+body.panel-resizing .question-panel {
+  pointer-events: none;
 }
 
 /* ==========================================
@@ -184,6 +347,9 @@
   margin: 0;
 
   font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--color-text);
 
   line-height: 1.8;
 
@@ -273,7 +439,9 @@
 
   overflow: hidden;
 
-  background: var(--color-surface);
+  background: #1e1e1e;
+
+  font-family: var(--editor-font);
 }
 
 /* ==========================================
@@ -283,27 +451,168 @@
 .editor-toolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
 
-  padding: 14px 18px;
+  padding: 10px 14px;
 
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #2f2f2f;
 
-  background: #1e1e1e;
+  background: #262626;
 
-  color: #fff;
+  color: #d4d4d4;
 
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 
   flex-shrink: 0;
 }
 
+.editor-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.editor-toolbar-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex: 1;
+  min-width: 0;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-toolbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================
+     Toolbar Groups
+     Clusters related controls with a shared
+     background chip, so the toolbar reads as
+     sections rather than one flat row.
+  ========================================== */
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  padding: 3px;
+
+  border-radius: 8px;
+
+  background: #202020;
+}
+
+.toolbar-group-separator {
+  width: 1px;
+  height: 16px;
+
+  margin: 0 2px;
+
+  background: #3a3a3a;
+
+  flex-shrink: 0;
+}
+
+.toolbar-group-meta {
+  padding: 4px 10px;
+
+  gap: 8px;
+}
+
+.toolbar-group-meta .meta-pill {
+  padding: 0;
+}
+
+.lang-pill,
+.autosave-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+
+  background: #2e2e2e;
+
+  color: #d4d4d4;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  transition: border-color var(--transition-fast);
+}
+
+.lang-pill:hover,
+.autosave-pill:hover {
+  border-color: #4a4a4a;
+}
+
+.lang-pill .icon-svg,
+.autosave-pill .icon-svg {
+  width: 1em;
+  height: 1em;
+  color: #9b9b9b;
+}
+
+.editor-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #b8b8b8;
+
+  cursor: pointer;
+
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.editor-icon-button:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.editor-icon-button:active {
+  transform: scale(0.94);
+}
+
+.editor-icon-button .icon-svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+
 #editor-file-name {
   font-weight: 600;
+  color: #f0f0f0;
 }
 
 #editor-save-status {
-  opacity: 0.75;
+  opacity: 0.65;
+  font-size: 0.8rem;
 }
 
 /* ==========================================
@@ -329,7 +638,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 18px 0 0;
+  padding: 10px 0 0;
 
   border: none;
   border-top: 1px solid var(--color-border);
@@ -345,9 +654,8 @@
      Footer Buttons
   ========================================== */
 
-.workspace-footer button,
-.workspace-actions button {
-  padding: 10px 22px;
+.workspace-footer button {
+  padding: 7px 16px;
 
   border: 1px solid var(--color-border);
   border-radius: 999px;
@@ -357,13 +665,13 @@
 
   cursor: pointer;
 
+  font-size: 0.9rem;
   font-weight: 500;
 
   transition: 0.2s;
 }
 
-.workspace-footer button:hover,
-.workspace-actions button:hover {
+.workspace-footer button:hover {
   transform: translateY(-1px);
   border-color: var(--color-primary);
   color: var(--color-primary-hover);
@@ -395,7 +703,18 @@
 
 @media (max-width: 1100px) {
   .workspace-body {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .workspace-body .question-panel,
+  .workspace-body .editor-panel {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .panel-resizer {
+    display: none;
   }
 
   .editor-panel {
@@ -403,59 +722,77 @@
   }
 }
 /* ==========================================
-   Toolbar Buttons
+   Editor Toolbar Action Buttons
 ========================================== */
 
-.toolbar-button {
-  display: inline-flex;
+.editor-toolbar-divider {
+  width: 1px;
+  height: 18px;
 
+  margin: 0 4px;
+
+  background: #3a3a3a;
+}
+
+.font-controls {
+  display: flex;
   align-items: center;
+  gap: 2px;
+}
 
-  gap: 8px;
+.font-controls .editor-icon-button {
+  width: 26px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 
-  padding: 10px 20px;
+#editor-font-size {
+  min-width: 20px;
 
-  border-radius: 999px;
+  text-align: center;
 
-  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
 
-  background: transparent;
+.editor-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-  color: var(--color-text);
+  height: 32px;
+  padding: 0 16px;
 
-  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+
+  background: var(--color-success);
+
+  color: #0a0a0a;
+
+  font-weight: 700;
+  font-size: 0.85rem;
 
   cursor: pointer;
 
-  transition: 0.2s;
+  transition: filter var(--transition-fast), transform var(--transition-fast);
 }
 
-.toolbar-button:hover {
+.editor-primary-button:hover {
+  filter: brightness(1.08);
   transform: translateY(-1px);
-  border-color: var(--color-primary);
 }
 
-.toolbar-button:active {
-  transform: scale(0.98);
+.editor-primary-button:active {
+  transform: translateY(0);
+  filter: brightness(0.96);
 }
 
-/* History */
-
-.history-button:hover {
-  color: var(--color-primary-hover);
+.editor-primary-button .icon-svg {
+  width: 1em;
+  height: 1em;
 }
 
-/* Save */
-
-.save-button {
-  border-color: var(--color-success);
-  color: var(--color-success);
-}
-
-.save-button:hover {
-  background: var(--color-success);
-  color: #0a0a0a !important;
-}
 #editor-save-status {
   font-weight: 700;
 
@@ -489,9 +826,7 @@
    Light Theme Overrides
 ========================================== */
 
-[data-theme="light"] .workspace-footer button:hover,
-[data-theme="light"] .workspace-actions button:hover,
-[data-theme="light"] .toolbar-button:hover {
+[data-theme="light"] .workspace-footer button:hover {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #ffffff;

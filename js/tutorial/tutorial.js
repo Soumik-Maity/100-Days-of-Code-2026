@@ -1,6 +1,8 @@
 // ==========================================
 // Tutorial Modal Controller
 // ==========================================
+import { icon } from "../utils/icons.js";
+
 const VIDEOS = {
   platform:
     "https://drive.google.com/file/d/1Z5QTS3JFSwYpkBDyfdS95ZdsF8qfU0LM/preview",
@@ -120,7 +122,7 @@ class Tutorial {
 
             <span class="tutorial-duration">16:50</span>
 
-            <div class="tutorial-play">▶</div>
+            <div class="tutorial-play">${icon("play")}</div>
 
           </div>
 
@@ -133,11 +135,11 @@ class Tutorial {
             </p>
 
             <ul class="tutorial-topics">
-              <li>📁 Choosing your coding workspace</li>
-              <li>💻 Solving daily coding questions</li>
-              <li>🔁 Using the Revision section</li>
-              <li>📝 Code Editor basics</li>
-              <li>▶ Running and testing code on your local system</li>
+              <li>${icon("folder")} Choosing your coding workspace</li>
+              <li>${icon("workspace")} Solving daily coding questions</li>
+              <li>${icon("loop")} Using the Revision section</li>
+              <li>${icon("note")} Code Editor basics</li>
+              <li>${icon("play")} Running and testing code on your local system</li>
             </ul>
 
             <a
@@ -146,7 +148,7 @@ class Tutorial {
   target="_blank"
   rel="noopener noreferrer"
 >
-  ▶ Watch Tutorial
+  ${icon("play")} Watch Tutorial
 </a>
 
           </div>
@@ -165,7 +167,7 @@ class Tutorial {
 
             <span class="tutorial-duration">9:35</span>
 
-            <div class="tutorial-play">▶</div>
+            <div class="tutorial-play">${icon("play")}</div>
 
           </div>
 
@@ -179,11 +181,11 @@ class Tutorial {
             </p>
 
             <ul class="tutorial-topics">
-              <li>📂 Creating a local Git repository</li>
-              <li>🔗 Connecting it to your 100 Days of Code folder</li>
-              <li>➕ Adding files to staging</li>
-              <li>💾 Writing meaningful commits</li>
-              <li>☁️ Pushing your code to GitHub regularly</li>
+              <li>${icon("folder")} Creating a local Git repository</li>
+              <li>${icon("link")} Connecting it to your 100 Days of Code folder</li>
+              <li>${icon("plus")} Adding files to staging</li>
+              <li>${icon("save")} Writing meaningful commits</li>
+              <li>${icon("cloud")} Pushing your code to GitHub regularly</li>
             </ul>
 
            <a
@@ -192,7 +194,7 @@ class Tutorial {
   target="_blank"
   rel="noopener noreferrer"
 >
-  ▶ Watch Tutorial
+  ${icon("play")} Watch Tutorial
 </a>
           </div>
 

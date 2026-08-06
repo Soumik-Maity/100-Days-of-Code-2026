@@ -2,6 +2,8 @@
 // Dashboard UI Manager
 // ==========================================
 
+import { icon } from "../utils/icons.js";
+
 class UIManager {
   constructor() {
     this.currentDayElement = document.getElementById("current-day");
@@ -64,7 +66,7 @@ class UIManager {
             </span>
   
             <span class="question-status ${solved ? "solved" : "pending"}">
-              ${solved ? "✔ Solved" : "Not Started"}
+              ${solved ? `${icon("check")} Solved` : "Not Started"}
             </span>
   
           </div>
@@ -76,7 +78,7 @@ class UIManager {
           <div class="question-card-footer">
   
             <button class="question-start-button">
-              ${solved ? "↺ Review" : "▶ Start Coding"}
+              ${solved ? `${icon("refresh")} Review` : `${icon("play")} Start Coding`}
             </button>
   
           </div>
