@@ -31,6 +31,22 @@
 }
 
 /* ==========================================
+   Accent Divider
+========================================== */
+
+.dashboard-accent-divider {
+  align-self: center;
+  flex-shrink: 0;
+
+  width: 64px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: var(--color-primary);
+}
+
+/* ==========================================
    Hero Banner
 ========================================== */
 
