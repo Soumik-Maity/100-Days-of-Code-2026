@@ -19,9 +19,9 @@
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: 4px;
 
-  padding: 18px 14px;
+  padding: 12px 10px;
 }
 
 /* ==========================================
@@ -32,14 +32,14 @@
   display: flex;
   align-items: center;
 
-  gap: 14px;
+  gap: 12px;
 
   width: 100%;
 
-  padding: 14px 16px;
+  padding: 10px 12px;
 
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
 
   background: transparent;
   color: var(--color-text);
@@ -103,39 +103,6 @@
   transition:
     opacity 0.2s ease,
     width 0.2s ease;
-}
-
-/* ==========================================
-   Collapsed Sidebar
-========================================== */
-
-#layout.sidebar-collapsed .nav-item {
-  justify-content: center;
-
-  padding: 14px 0;
-}
-
-#layout.sidebar-collapsed .nav-item .label {
-  opacity: 0;
-
-  width: 0;
-
-  overflow: hidden;
-
-  pointer-events: none;
-}
-
-#layout.sidebar-collapsed #sidebar nav {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-/* ==========================================
-   Active Item (Collapsed)
-========================================== */
-
-#layout.sidebar-collapsed .nav-item.active {
-  border-radius: 14px;
 }
 
 /* ==========================================

@@ -17,6 +17,8 @@ import ThemeManager from "./theme/theme.js";
 import InstructionsManager from "./instructions/instructions.js";
 import LandingManager from "./landing/landing.js";
 import TutorialManager from "./tutorial/tutorial.js";
+import PanelResizer from "./workspace/panelResizer.js";
+import EditorFullscreen from "./workspace/editorFullscreen.js";
 
 class App {
   constructor() {
@@ -30,6 +32,9 @@ class App {
     );
     this.previousButton = document.getElementById("previous-question");
     this.nextButton = document.getElementById("next-question");
+    this.workspaceBackButton = document.getElementById(
+      "workspace-back-button",
+    );
     this.saveButton = document.getElementById("save-button");
     this.resetButton = document.getElementById("reset-button");
     this.fontIncreaseButton = document.getElementById("font-increase");
@@ -65,6 +70,8 @@ class App {
 
     this.registerEvents();
     ThemeManager.initialize();
+    PanelResizer.initialize();
+    EditorFullscreen.initialize();
     LandingManager.initialize(() => this.initialize());
   }
 
@@ -173,6 +180,10 @@ class App {
     );
 
     this.nextButton.addEventListener("click", () => this.openNextQuestion());
+
+    this.workspaceBackButton.addEventListener("click", () =>
+      this.openDashboard(),
+    );
 
     this.saveButton.addEventListener("click", () => this.saveCurrentSolution());
 
@@ -287,7 +298,8 @@ class App {
     this.workspaceView.hidden = true;
     this.dashboardView.hidden = true;
     document.getElementById("revision-view").hidden = true;
-    document.getElementById("layout").classList.remove("sidebar-collapsed");
+    document.getElementById("layout").classList.remove("sidebar-hidden");
+    this.appShell.classList.remove("editor-focus-mode");
 
     this.appShell.classList.add("app-shell-blurred");
     this.welcomeOverlay.hidden = false;
@@ -388,7 +400,8 @@ class App {
     this.dashboardView.hidden = true;
     document.getElementById("revision-view").hidden = true;
     this.workspaceView.hidden = false;
-    document.getElementById("layout").classList.add("sidebar-collapsed");
+    document.getElementById("layout").classList.add("sidebar-hidden");
+    this.appShell.classList.add("editor-focus-mode");
     Workspace.showQuestion(question);
 
     this.startSessionTimer();
@@ -620,7 +633,8 @@ class App {
     this.workspaceView.hidden = true;
 
     document.getElementById("revision-view").hidden = false;
-    document.getElementById("layout").classList.remove("sidebar-collapsed");
+    document.getElementById("layout").classList.remove("sidebar-hidden");
+    this.appShell.classList.remove("editor-focus-mode");
     document
       .querySelectorAll(".nav-item")
       .forEach((btn) => btn.classList.remove("active"));
@@ -636,7 +650,8 @@ class App {
     this.workspaceView.hidden = true;
     document.getElementById("revision-view").hidden = true;
     this.dashboardView.hidden = false;
-    document.getElementById("layout").classList.remove("sidebar-collapsed");
+    document.getElementById("layout").classList.remove("sidebar-hidden");
+    this.appShell.classList.remove("editor-focus-mode");
     document
       .querySelectorAll(".nav-item")
       .forEach((btn) => btn.classList.remove("active"));

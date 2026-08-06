@@ -3,6 +3,7 @@
 // ==========================================
 
 import StatusBar from "../ui/statusbar.js";
+import { icon } from "../utils/icons.js";
 
 class ThemeManager {
   constructor() {
@@ -37,7 +38,11 @@ class ThemeManager {
 
     localStorage.setItem("theme", theme);
 
-    StatusBar.setTheme(theme === "light" ? "☀ Light" : "🌙 Dark");
+    StatusBar.setTheme(
+      theme === "light"
+        ? `${icon("sun", "status-icon")} Light`
+        : `${icon("moon", "status-icon")} Dark`
+    );
   }
 
   /**

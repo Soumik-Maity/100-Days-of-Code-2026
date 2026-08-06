@@ -2,6 +2,8 @@
 // Features Modal Controller
 // ==========================================
 
+import { icon } from "../utils/icons.js";
+
 class Features {
   constructor() {
     this.initialized = false;
@@ -85,7 +87,7 @@ class Features {
     <div class="feature-grid">
 
       <div class="feature-card">
-        <h3>💻 Coding Workspace</h3>
+        <h3>${icon("workspace")} Coding Workspace</h3>
 
         <ul>
           <li>Monaco Code Editor</li>
@@ -98,7 +100,7 @@ class Features {
       </div>
 
       <div class="feature-card">
-        <h3>📚 Learning Experience</h3>
+        <h3>${icon("book")} Learning Experience</h3>
 
         <ul>
           <li>Structured 100-Day Coding Curriculum</li>
@@ -111,7 +113,7 @@ class Features {
       </div>
 
       <div class="feature-card">
-        <h3>🛡 Academic Integrity</h3>
+        <h3>${icon("shield")} Academic Integrity</h3>
 
         <ul>
           <li>Copy & Paste Restrictions</li>
@@ -122,7 +124,7 @@ class Features {
       </div>
 
       <div class="feature-card">
-        <h3>💾 Local First</h3>
+        <h3>${icon("save")} Local First</h3>
 
         <ul>
           <li>Local Workspace Storage</li>
@@ -133,13 +135,13 @@ class Features {
       </div>
 
       <div class="feature-card feature-coming-soon">
-        <h3>🚀 Upcoming Features</h3>
+        <h3>${icon("rocket")} Upcoming Features</h3>
 
         <ul>
-          <li>▶ Compile & Run Programs</li>
-          <li>✔ Automatic Test Case Validation</li>
-          <li>📊 Performance Analytics</li>
-          <li>🏅 Badges & Achievements</li>
+          <li>${icon("play")} Compile & Run Programs</li>
+          <li>${icon("check")} Automatic Test Case Validation</li>
+          <li>${icon("chart")} Performance Analytics</li>
+          <li>${icon("badge")} Badges & Achievements</li>
         </ul>
       </div>
 

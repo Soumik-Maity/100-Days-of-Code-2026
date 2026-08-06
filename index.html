@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     />
 
     <!-- CSS -->
@@ -44,7 +44,7 @@
 
       <header class="landing-header">
         <div class="landing-brand">
-          <img src="assets/upes.jpg" alt="UPES" class="landing-logo" />
+          <img src="assets/upes.png" alt="UPES" class="landing-logo" />
         </div>
 
         <nav class="landing-nav">
@@ -59,7 +59,22 @@
       </header>
 
       <main class="landing-hero">
-        <div class="landing-badge">✨ New Coding Practice Experience</div>
+        <div class="landing-badge">
+          <svg
+            class="icon-svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2 2M15.5 15.5l2 2M6.5 17.5l2-2M15.5 8.5l2-2"
+            />
+          </svg>
+          New Coding Practice Experience
+        </div>
 
         <h1 class="landing-title">
           <span class="highlight">100 Days</span> of Code
@@ -112,7 +127,7 @@
       =========================================== -->
         <header id="title-bar">
           <div class="app-brand">
-            <img src="assets/upes.jpg" alt="UPES" class="app-logo" />
+            <img src="assets/upes.png" alt="UPES" class="app-logo" />
 
             <div class="app-title">
               <div class="app-main-title">100 Days of Code</div>
@@ -244,23 +259,32 @@
               <!-- Welcome Banner -->
               <div class="dashboard-hero">
                 <div class="dashboard-hero-content">
-                  <h1>Welcome to UPES 100 Days of Code</h1>
+                  <p class="dashboard-hero-eyebrow">
+                    <svg
+                      class="icon-svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2 2M15.5 15.5l2 2M6.5 17.5l2-2M15.5 8.5l2-2" />
+                    </svg>
+                    UPES 100 Days of Code
+                  </p>
 
-                  <h2 id="current-day">Day 1</h2>
+                  <h1 id="current-day">Day 1</h1>
 
                   <p id="current-chapter">User Inputs, Operations & Output</p>
                 </div>
+
+                <div class="dashboard-hero-badge">
+                  <span class="dashboard-hero-badge-label">Keep going</span>
+                  <span class="dashboard-hero-badge-value">You've got this.</span>
+                </div>
               </div>
 
-              <!-- Today's Questions -->
-              <section class="dashboard-section">
-                <div class="section-header">
-                  <h2>Today's Questions</h2>
-                </div>
-
-                <!-- Generated dynamically -->
-                <div id="today-questions"></div>
-              </section>
               <!-- ======================================
             Progress
             ====================================== -->
@@ -272,6 +296,16 @@
 
                 <div id="dashboard-progress"></div>
               </section>
+
+              <!-- Today's Questions -->
+              <section class="dashboard-section">
+                <div class="section-header">
+                  <h2>Today's Questions</h2>
+                </div>
+
+                <!-- Generated dynamically -->
+                <div id="today-questions"></div>
+              </section>
             </section>
 
             <!-- ======================================
@@ -279,60 +313,33 @@
           ======================================= -->
             <section id="workspace-view" hidden>
               <header class="workspace-header">
-                <!-- Left -->
                 <div class="workspace-title">
+                  <button
+                    id="workspace-back-button"
+                    class="workspace-back-button"
+                    title="Back to Dashboard"
+                  >
+                    <svg
+                      class="icon-svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M14.5 6 8 12l6.5 6" />
+                    </svg>
+                  </button>
                   <h2 id="workspace-question-id">Question 1</h2>
                   <p id="workspace-question-meta"></p>
-                </div>
-
-                <!-- Center -->
-                <div class="workspace-info">
-                  <div class="workspace-info-card">
-                    <span class="info-label">⏱ Session</span>
-                    <span id="session-timer-value" class="info-value"
-                      >00:00</span
-                    >
-                  </div>
-
-                  <div id="last-saved" class="workspace-info-card">
-                    <span class="info-label">💾 Last Saved</span>
-                    <span id="last-saved-value" class="info-value"
-                      >Not saved yet</span
-                    >
-                  </div>
-                </div>
-
-                <!-- Right -->
-                <div class="workspace-actions">
-                  <button
-                    id="history-button"
-                    class="toolbar-button history-button"
-                  >
-                    🕘 <span>History</span>
-                  </button>
-
-                  <button id="reset-button" class="toolbar-button reset-button">
-                    🔄 <span>Reset</span>
-                  </button>
-
-                  <div class="font-controls">
-                    <button id="font-decrease">A−</button>
-
-                    <span id="editor-font-size">15</span>
-
-                    <button id="font-increase">A+</button>
-                  </div>
-
-                  <button id="save-button" class="toolbar-button save-button">
-                    💾 <span>Save</span>
-                  </button>
                 </div>
               </header>
 
               <!-- Body -->
-              <div class="workspace-body">
+              <div class="workspace-body" id="workspace-body">
                 <!-- Left Panel -->
-                <aside class="question-panel">
+                <aside class="question-panel" id="question-panel">
                   <!-- Problem -->
                   <section class="question-card">
                     <div class="card-header">
@@ -409,13 +416,202 @@
                   </section>
                 </aside>
 
+                <!-- Drag Handle -->
+                <div id="panel-resizer" class="panel-resizer" role="separator" aria-orientation="vertical" aria-label="Resize panels" tabindex="0"></div>
+
                 <!-- Right Panel -->
-                <section class="editor-panel">
+                <section class="editor-panel" id="editor-panel">
                   <div class="editor-wrapper">
                     <div class="editor-toolbar">
-                      <span id="editor-file-name"> Q001.c </span>
+                      <div class="editor-toolbar-left">
+                        <span class="lang-pill">
+                          <svg
+                            class="icon-svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M9 8 5 12l4 4M15 8l4 4-4 4" />
+                          </svg>
+                          C
+                        </span>
+                        <span class="autosave-pill" title="Code is saved to your local workspace only">
+                          <svg
+                            class="icon-svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <rect x="5" y="10.5" width="14" height="9" rx="1.8" />
+                            <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+                          </svg>
+                          Auto
+                        </span>
+                      </div>
 
-                      <span id="editor-save-status"> Unsaved </span>
+                      <div class="editor-toolbar-center">
+                        <span id="editor-file-name">Q001.c</span>
+                        <span id="editor-save-status">Unsaved</span>
+                      </div>
+
+                      <div class="editor-toolbar-right">
+                        <div class="toolbar-group toolbar-group-meta">
+                          <span class="meta-pill" title="Time spent on this question this session">
+                            <svg
+                              class="icon-svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <circle cx="12" cy="12" r="8.5" />
+                              <path d="M12 8v4l3 2" />
+                            </svg>
+                            <span id="session-timer-value">00:00</span>
+                          </span>
+
+                          <span class="toolbar-group-separator"></span>
+
+                          <span id="last-saved" class="meta-pill">
+                            <svg
+                              class="icon-svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M5 4.5h11L19.5 8v11a1 1 0 0 1-1 1H5.5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1Z"
+                              />
+                              <path d="M8 4.5v4.5h6V4.5M8 14h8v6H8z" />
+                            </svg>
+                            <span id="last-saved-value">Not saved yet</span>
+                          </span>
+                        </div>
+
+                        <div class="editor-toolbar-divider"></div>
+
+                        <div class="toolbar-group">
+                          <button
+                            id="history-button"
+                            class="editor-icon-button"
+                            title="History"
+                          >
+                            <svg
+                              class="icon-svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M4 12a8 8 0 1 0 2.5-5.8" />
+                              <path d="M3 4v4.5h4.5" />
+                              <path d="M12 8v4.5l3 2" />
+                            </svg>
+                          </button>
+
+                          <span class="toolbar-group-separator"></span>
+
+                          <button
+                            id="reset-button"
+                            class="editor-icon-button"
+                            title="Reset to Template"
+                          >
+                            <svg
+                              class="icon-svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M4 4.5V9h4.5" />
+                              <path d="M20 19.5V15h-4.5" />
+                              <path
+                                d="M5 15a7.5 7.5 0 0 0 12.8 3.2M19 9A7.5 7.5 0 0 0 6.2 5.8"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+
+                        <div class="toolbar-group font-controls">
+                          <button
+                            id="font-decrease"
+                            class="editor-icon-button"
+                            title="Decrease Font Size"
+                          >
+                            A−
+                          </button>
+
+                          <span id="editor-font-size">15</span>
+
+                          <button
+                            id="font-increase"
+                            class="editor-icon-button"
+                            title="Increase Font Size"
+                          >
+                            A+
+                          </button>
+                        </div>
+
+                        <button
+                          id="editor-fullscreen-button"
+                          class="editor-icon-button"
+                          title="Full Screen"
+                          aria-pressed="false"
+                        >
+                          <svg
+                            class="icon-svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path
+                              d="M9 4.5H5.5A1 1 0 0 0 4.5 5.5V9M15 4.5h3.5a1 1 0 0 1 1 1V9M9 19.5H5.5a1 1 0 0 1-1-1V15M15 19.5h3.5a1 1 0 0 0 1-1V15"
+                            />
+                          </svg>
+                        </button>
+
+                        <div class="editor-toolbar-divider"></div>
+
+                        <button
+                          id="save-button"
+                          class="editor-primary-button"
+                          title="Save"
+                        >
+                          <svg
+                            class="icon-svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path
+                              d="M5 4.5h11L19.5 8v11a1 1 0 0 1-1 1H5.5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1Z"
+                            />
+                            <path d="M8 4.5v4.5h6V4.5M8 14h8v6H8z" />
+                          </svg>
+                          <span>Save</span>
+                        </button>
+                      </div>
                     </div>
 
                     <div id="editor-container"></div>
@@ -425,9 +621,35 @@
 
               <!-- Footer -->
               <footer class="workspace-footer">
-                <button id="previous-question">← Previous</button>
+                <button id="previous-question">
+                  <svg
+                    class="icon-svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M14.5 6 8 12l6.5 6" />
+                  </svg>
+                  Previous
+                </button>
 
-                <button id="next-question">Next →</button>
+                <button id="next-question">
+                  Next
+                  <svg
+                    class="icon-svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M9.5 6 16 12l-6.5 6" />
+                  </svg>
+                </button>
               </footer>
             </section>
 
@@ -489,7 +711,19 @@
           <div class="history-header">
             <h2>History</h2>
 
-            <button id="history-close">✕</button>
+            <button id="history-close">
+              <svg
+                class="icon-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            </button>
           </div>
 
           <div id="history-list"></div>
@@ -502,7 +736,19 @@
         <div class="instructions-header">
           <h2>Student Guide</h2>
 
-          <button id="instructions-close">✕</button>
+          <button id="instructions-close">
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
         </div>
 
         <div id="instructions-content">
@@ -517,9 +763,36 @@
     <div id="features-overlay" hidden>
       <div id="features-modal">
         <div class="features-header">
-          <h2>✨ Platform Features</h2>
+          <h2>
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2 2M15.5 15.5l2 2M6.5 17.5l2-2M15.5 8.5l2-2"
+              />
+            </svg>
+            Platform Features
+          </h2>
 
-          <button id="features-close">✕</button>
+          <button id="features-close">
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
         </div>
 
         <div id="features-content"></div>
@@ -528,16 +801,54 @@
     <div id="tutorial-overlay" hidden>
       <div id="tutorial-modal">
         <div class="tutorial-header">
-          <h2>🎬 Tutorials</h2>
+          <h2>
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="6.5" width="18" height="12" rx="1.5" />
+              <path d="m10 10 5 2.5-5 2.5z" fill="currentColor" stroke="none" />
+            </svg>
+            Tutorials
+          </h2>
 
-          <button id="tutorial-close">✕</button>
+          <button id="tutorial-close">
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
         </div>
 
         <div id="tutorial-content"></div>
       </div>
       <div id="video-overlay" hidden>
         <div id="video-modal">
-          <button id="video-close">✕</button>
+          <button id="video-close">
+            <svg
+              class="icon-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
 
           <iframe
             id="tutorial-player"

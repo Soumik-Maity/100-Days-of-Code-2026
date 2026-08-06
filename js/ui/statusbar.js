@@ -39,7 +39,7 @@ class StatusBar {
    * @param {string} theme
    */
   setTheme(theme) {
-    this.themeElement.textContent = theme;
+    this.themeElement.innerHTML = theme;
   }
 }
 
